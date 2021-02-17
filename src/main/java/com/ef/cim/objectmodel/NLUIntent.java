@@ -1,0 +1,22 @@
+package com.ef.cim.objectmodel;
+
+import java.io.Serializable;
+
+public class NLUIntent implements Serializable {
+    private String name;
+    private double confidence;
+
+    public String getName() {
+        return this.name;
+    }
+    public double getConfidence() {
+        return this.confidence;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+    public void setConfidence(double value) {
+        this.confidence = value;
+    }
+}
