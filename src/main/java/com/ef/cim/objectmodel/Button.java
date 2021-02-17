@@ -82,7 +82,7 @@ public class Button {
   /**
    * Sets the bgColor of the button
    *
-   * @param actionType object of type {@code String}
+   * @param bgColor object of type {@code String}
    */
   public void setBgColor(String bgColor) {
     this.bgColor = bgColor;

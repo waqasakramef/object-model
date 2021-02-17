@@ -15,7 +15,6 @@ public class CarousalElement {
    * objects to empty lists Requires image url to initialize the image property of type {@code
    * ImageButton}
    *
-   * @param imageUrl, object of type {@code ImageButton}
    */
   public CarousalElement() {
     this.imageButton = new ImageButton();
@@ -72,7 +71,7 @@ public class CarousalElement {
   /**
    * Sets the image button of the carousal element
    *
-   * @param image, object of type {@code ImageButton}
+   * @param imageButton, object of type {@code ImageButton}
    */
   public void setImageButton(ImageButton imageButton) {
     this.imageButton = imageButton;
@@ -90,7 +89,7 @@ public class CarousalElement {
   /**
    * Sets the text button of the carousal element
    *
-   * @param text, object of type {@code Button}
+   * @param descriptioButton, object of type {@code Button}
    */
   public void setDescriptioButton(CarousalDescriptionButton descriptioButton) {
     this.descriptioButton = descriptioButton;

@@ -42,10 +42,11 @@ public class Channel implements Serializable {
     this.channelConfig=channelConfig;
     this.channelConnector=channelConnector;
   }
+
   /**
    * Set's Id field of Chanel as UUID
+   * @param id, of type UUID
    */
-
   public void setId(UUID id){
     this.id=id;
   }

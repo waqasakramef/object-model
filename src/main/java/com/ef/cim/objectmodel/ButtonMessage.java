@@ -89,7 +89,7 @@ public class ButtonMessage extends StructuredMessage {
   /**
    * set the composerInputDisabled of button message
    * 
-   * @param text, of type {@code boolean}
+   * @param composerInputDisabled, of type {@code boolean}
    */
   public void setComposerInputDisabled(boolean composerInputDisabled) {
     this.composerInputDisabled = composerInputDisabled;
