@@ -5,7 +5,7 @@ public class Team {
     private String name;
     private Tenant tenant;
 
-    public Team(){
+    public Team() {
         tenant = new Tenant();
     }
 

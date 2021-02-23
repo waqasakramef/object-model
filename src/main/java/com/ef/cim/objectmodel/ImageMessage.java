@@ -3,20 +3,20 @@ package com.ef.cim.objectmodel;
 import java.net.URL;
 
 public class ImageMessage extends MultimediaMessage {
-  private long size;
+    private long size;
 
-  // Constructor
-  public ImageMessage(URL media) {
-    super(MessageType.IMAGE, media);
-  }
+    // Constructor
+    public ImageMessage(URL media) {
+        super(MessageType.IMAGE, media);
+    }
 
-  // Getters
-  public long getSize() {
-    return this.size;
-  }
+    // Getters
+    public long getSize() {
+        return this.size;
+    }
 
-  // Setters
-  public void setSize(long size) {
-    this.size = size;
-  }
+    // Setters
+    public void setSize(long size) {
+        this.size = size;
+    }
 }

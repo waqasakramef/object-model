@@ -3,38 +3,38 @@ package com.ef.cim.objectmodel;
 import java.net.URL;
 
 public class FileMessage extends MultimediaMessage {
-  private String fileName;
-  private long size;
-  private AttachmentMessage attachmentMessage;
+    private String fileName;
+    private long size;
+    private AttachmentMessage attachmentMessage;
 
-  public FileMessage(URL media) {
-    super(MessageType.FILE, media);
-    attachmentMessage = new AttachmentMessage();
-  }
+    public FileMessage(URL media) {
+        super(MessageType.FILE, media);
+        attachmentMessage = new AttachmentMessage();
+    }
 
-  // Getters
-  public String getFileName() {
-    return this.fileName;
-  }
+    // Getters
+    public String getFileName() {
+        return this.fileName;
+    }
 
-  public long getSize() {
-    return this.size;
-  }
+    // Setters
+    public void setFileName(String fileName) {
+        this.fileName = fileName;
+    }
 
-  public AttachmentMessage getAttachmentMessage() {
-    return this.attachmentMessage;
-  }
+    public long getSize() {
+        return this.size;
+    }
 
-  // Setters
-  public void setFileName(String fileName) {
-    this.fileName = fileName;
-  }
+    public void setSize(long size) {
+        this.size = size;
+    }
 
-  public void setSize(long size) {
-    this.size = size;
-  }
+    public AttachmentMessage getAttachmentMessage() {
+        return this.attachmentMessage;
+    }
 
-  public void setAttachmentMessage(AttachmentMessage attachmentMessage) {
-    this.attachmentMessage = attachmentMessage;
-  }
+    public void setAttachmentMessage(AttachmentMessage attachmentMessage) {
+        this.attachmentMessage = attachmentMessage;
+    }
 }

@@ -3,21 +3,23 @@ package com.ef.cim.objectmodel;
 import java.net.URL;
 
 public class ImageButton extends CarouselElementActions {
-  private URL imageUrl;
+    private URL imageUrl;
 
-  // Default Constructor
-  public ImageButton() {}
-  public ImageButton(URL imageUrl) {
-    this.imageUrl = imageUrl;
-  }
+    // Default Constructor
+    public ImageButton() {
+    }
 
-  // Getters
-  public URL getImageUrl() {
-    return this.imageUrl;
-  }
+    public ImageButton(URL imageUrl) {
+        this.imageUrl = imageUrl;
+    }
 
-  // Setters
-  public void setImageUrl(URL imageUrl) {
-    this.imageUrl = imageUrl;
-  }
+    // Getters
+    public URL getImageUrl() {
+        return this.imageUrl;
+    }
+
+    // Setters
+    public void setImageUrl(URL imageUrl) {
+        this.imageUrl = imageUrl;
+    }
 }

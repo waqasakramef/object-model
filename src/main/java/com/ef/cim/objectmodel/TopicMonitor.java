@@ -25,5 +25,7 @@ public class TopicMonitor implements Participant {
     }
 
 
-    public String getParticipantType() { return participantType; }
+    public String getParticipantType() {
+        return participantType;
+    }
 }

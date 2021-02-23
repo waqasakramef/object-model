@@ -9,13 +9,15 @@ public class NLUIntent implements Serializable {
     public String getName() {
         return this.name;
     }
-    public double getConfidence() {
-        return this.confidence;
-    }
 
     public void setName(String name) {
         this.name = name;
     }
+
+    public double getConfidence() {
+        return this.confidence;
+    }
+
     public void setConfidence(double value) {
         this.confidence = value;
     }

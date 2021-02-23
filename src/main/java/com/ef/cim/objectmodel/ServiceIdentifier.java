@@ -1,7 +1,8 @@
 package com.ef.cim.objectmodel;
 
-import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
+import java.io.Serializable;
 
 @JsonAutoDetect(fieldVisibility = JsonAutoDetect.Visibility.ANY)
-public class ServiceIdentifier implements Serializable {}
+public class ServiceIdentifier implements Serializable {
+}

@@ -3,36 +3,36 @@ package com.ef.cim.objectmodel;
 import java.util.UUID;
 
 public class DeliveryNotification extends MessageBody {
-  private final UUID messageID;
-  private DeliveryStatus status;
-  private int reasonCode;
+    private final UUID messageID;
+    private DeliveryStatus status;
+    private int reasonCode;
 
-  // Constructor 1
-  public DeliveryNotification(DeliveryStatus status) {
-    super(MessageType.DELIVERYNOTIFICATION);
-    this.messageID = UUID.randomUUID();
-    this.status = status;
-  }
+    // Constructor 1
+    public DeliveryNotification(DeliveryStatus status) {
+        super(MessageType.DELIVERYNOTIFICATION);
+        this.messageID = UUID.randomUUID();
+        this.status = status;
+    }
 
-  // Getters
-  public UUID getMessageID() {
-    return this.messageID;
-  }
+    // Getters
+    public UUID getMessageID() {
+        return this.messageID;
+    }
 
-  public DeliveryStatus getStatus() {
-    return this.status;
-  }
+    public DeliveryStatus getStatus() {
+        return this.status;
+    }
 
-  public int getReasonCode() {
-    return this.reasonCode;
-  }
+    // Setters
+    public void setStatus(DeliveryStatus status) {
+        this.status = status;
+    }
 
-  // Setters
-  public void setStatus(DeliveryStatus status) {
-    this.status = status;
-  }
+    public int getReasonCode() {
+        return this.reasonCode;
+    }
 
-  public void setReasonCode(int reasonCode) {
-    this.reasonCode = reasonCode;
-  }
+    public void setReasonCode(int reasonCode) {
+        this.reasonCode = reasonCode;
+    }
 }

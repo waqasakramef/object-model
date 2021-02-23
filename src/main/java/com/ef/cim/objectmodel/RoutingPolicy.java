@@ -4,35 +4,36 @@ import java.io.Serializable;
 import java.util.UUID;
 
 public class RoutingPolicy implements Serializable {
-  private UUID queueID;
-  PolicyType policy;
+    PolicyType policy;
+    private final UUID queueID;
 
-  // Constructor
-  public RoutingPolicy() {
-    this.queueID = UUID.randomUUID();
-  }
+    // Constructor
+    public RoutingPolicy() {
+        this.queueID = UUID.randomUUID();
+    }
 
-  // Getters
-  public UUID getQueueID() {
-    return this.queueID;
-  }
+    // Getters
+    public UUID getQueueID() {
+        return this.queueID;
+    }
 
-  public PolicyType getPolicy() {
-    return policy;
-  }
+    public PolicyType getPolicy() {
+        return policy;
+    }
 
-  public void setPolicy(PolicyType policy) {
-    this.policy = policy;
-  }
-  /***
-   * String Representation of RoutingPolicy
-   * @return String
-   */
-  @Override
-  public String toString() {
-    return "RoutingPolicy{" +
-            "queueID=" + queueID +
-            ", policy=" + policy +
-            '}';
-  }
+    public void setPolicy(PolicyType policy) {
+        this.policy = policy;
+    }
+
+    /***
+     * String Representation of RoutingPolicy
+     * @return String
+     */
+    @Override
+    public String toString() {
+        return "RoutingPolicy{" +
+                "queueID=" + queueID +
+                ", policy=" + policy +
+                '}';
+    }
 }

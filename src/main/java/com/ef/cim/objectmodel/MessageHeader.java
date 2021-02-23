@@ -1,12 +1,12 @@
 package com.ef.cim.objectmodel;
 
-import javax.validation.Valid;
 import java.io.Serializable;
 import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import javax.validation.Valid;
 
 public class MessageHeader implements Serializable {
 
@@ -19,7 +19,7 @@ public class MessageHeader implements Serializable {
     private MessageSecurity securityInfo; // Class MessageSecurity Empty | not in object model
     private List<String> stamps;
     private NLUIntent intent;
-    private Map<String,Object> entities;
+    private Map<String, Object> entities;
     private ChannelSession channelSession;
 
     // Default Constructor
@@ -29,7 +29,7 @@ public class MessageHeader implements Serializable {
         this.timestamp = new Timestamp(System.currentTimeMillis());
         this.securityInfo = new MessageSecurity();
         this.stamps = new ArrayList<String>();
-        this.entities = new HashMap<String,Object>();
+        this.entities = new HashMap<String, Object>();
         this.channelSession = new ChannelSession();
     }
 
@@ -38,69 +38,69 @@ public class MessageHeader implements Serializable {
         return this.sender;
     }
 
-    public ChannelData getChannelData() {
-        return this.channelData;
-    }
-
-    public LanguageCode getLanguage() {
-        return this.language;
-    }
-
-    public Timestamp getTimestamp() {
-        return this.timestamp;
-    }
-
-    public MessageSecurity getSecurityInfo() {
-        return this.securityInfo;
-    }
-
-    public List<String> getStamps() {
-        return this.stamps;
-    }
-
-    public NLUIntent getIntent() {
-        return this.intent;
-    }
-
-    public Map<String,Object> getEntities() {
-        return this.entities;
-    }
-
-    public ChannelSession getChannelSession() {
-        return this.channelSession;
-    }
-
     // Setters
     public void setSender(TopicParticipant sender) {
         this.sender = sender;
+    }
+
+    public ChannelData getChannelData() {
+        return this.channelData;
     }
 
     public void setChannelData(ChannelData channelData) {
         this.channelData = channelData;
     }
 
+    public LanguageCode getLanguage() {
+        return this.language;
+    }
+
     public void setLanguage(LanguageCode language) {
         this.language = language;
+    }
+
+    public Timestamp getTimestamp() {
+        return this.timestamp;
     }
 
     public void setTimestamp(Timestamp timestamp) {
         this.timestamp = timestamp;
     }
 
+    public MessageSecurity getSecurityInfo() {
+        return this.securityInfo;
+    }
+
     public void setSecurityInfo(MessageSecurity securityInfo) {
         this.securityInfo = securityInfo;
+    }
+
+    public List<String> getStamps() {
+        return this.stamps;
     }
 
     public void setStamps(List<String> stamps) {
         this.stamps = stamps;
     }
 
+    public NLUIntent getIntent() {
+        return this.intent;
+    }
+
     public void setIntent(NLUIntent intent) {
         this.intent = intent;
     }
 
-    public void setEntities(Map<String,Object> entities) {
+    public Map<String, Object> getEntities() {
+        return this.entities;
+    }
+
+    public void setEntities(Map<String, Object> entities) {
         this.entities = entities;
+    }
+
+    public ChannelSession getChannelSession() {
+        return this.channelSession;
     }
 
     public void setChannelSession(ChannelSession channelSession) {

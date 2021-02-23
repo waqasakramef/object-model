@@ -1,12 +1,9 @@
 package com.ef.cim.objectmodel;
 
-import com.fasterxml.jackson.annotation.JsonSubTypes;
-import com.fasterxml.jackson.annotation.JsonTypeInfo;
-
-import javax.validation.constraints.NotBlank;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
+import javax.validation.constraints.NotBlank;
 
 /**
  * A {@code ChannelData} object represents the data available on different type of channels. For
@@ -22,7 +19,7 @@ public class ChannelData implements Serializable {
     private String serviceIdentifier;
     private List<KeyValuePair> additionalAttribute;
 
-    public ChannelData(){
+    public ChannelData() {
         this.additionalAttribute = new ArrayList<>();
     }
 
@@ -30,20 +27,20 @@ public class ChannelData implements Serializable {
         return channelCustomerIdentifier;
     }
 
-    public String getServiceIdentifier() {
-        return serviceIdentifier;
-    }
-
-    public List<KeyValuePair> getAdditionalAttribute() {
-        return additionalAttribute;
-    }
-
     public void setChannelCustomerIdentifier(String channelCustomerIdentifier) {
         this.channelCustomerIdentifier = channelCustomerIdentifier;
     }
 
+    public String getServiceIdentifier() {
+        return serviceIdentifier;
+    }
+
     public void setServiceIdentifier(String serviceIdentifier) {
         this.serviceIdentifier = serviceIdentifier;
+    }
+
+    public List<KeyValuePair> getAdditionalAttribute() {
+        return additionalAttribute;
     }
 
     public void setAdditionalAttribute(List<KeyValuePair> additionalAttribute) {
@@ -52,6 +49,7 @@ public class ChannelData implements Serializable {
 
     /**
      * String Representation of ChannelData
+     *
      * @return String
      */
     @Override

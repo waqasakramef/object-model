@@ -1,10 +1,10 @@
 package com.ef.cim.objectmodel;
 
-import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 import java.util.UUID;
+import javax.validation.constraints.NotNull;
 
 public class KeycloakUser {
     @NotNull
@@ -51,24 +51,29 @@ public class KeycloakUser {
         this.roles = roles;
     }
 
-    public boolean containsRole(String role){
+    public boolean containsRole(String role) {
         return this.roles.contains(role);
     }
 
-    public boolean addRole(String role){
+    public boolean addRole(String role) {
         return this.roles.add(role);
     }
 
-    public boolean removeRole(String role){
+    public boolean removeRole(String role) {
         return this.roles.remove(role);
     }
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
         KeycloakUser that = (KeycloakUser) o;
-        return id.equals(that.id) && firstName.equals(that.firstName) && lastName.equals(that.lastName) && Objects.equals(roles, that.roles);
+        return id.equals(that.id) && firstName.equals(that.firstName) &&
+                lastName.equals(that.lastName) && Objects.equals(roles, that.roles);
     }
 
     @Override

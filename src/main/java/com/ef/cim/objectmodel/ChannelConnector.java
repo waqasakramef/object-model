@@ -1,12 +1,12 @@
 package com.ef.cim.objectmodel;
 
-import javax.validation.Valid;
 import java.io.Serializable;
 import java.net.URL;
 import java.util.UUID;
+import javax.validation.Valid;
 
 public class ChannelConnector implements Serializable {
-    private UUID id;
+    private final UUID id;
     private String channelConnectorName;
     private URL channelWebhook;
     @Valid
@@ -15,7 +15,7 @@ public class ChannelConnector implements Serializable {
     private Tenant tenant;
 
     public ChannelConnector() {
-        this.id=UUID.randomUUID();
+        this.id = UUID.randomUUID();
     }
 
     public UUID getId() {

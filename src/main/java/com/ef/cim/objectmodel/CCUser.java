@@ -1,14 +1,13 @@
 package com.ef.cim.objectmodel;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.mapping.Document;
-
-import javax.validation.Valid;
-import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
+import javax.validation.Valid;
+import javax.validation.constraints.NotNull;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 @Document(value = "agents")
 public class CCUser implements Participant {
@@ -53,19 +52,23 @@ public class CCUser implements Participant {
         return associatedRoutingAttributes;
     }
 
-    public void setAssociatedRoutingAttributes(List<AssociatedRoutingAttribute> associatedRoutingAttributes) {
+    public void setAssociatedRoutingAttributes(
+            List<AssociatedRoutingAttribute> associatedRoutingAttributes) {
         this.associatedRoutingAttributes = associatedRoutingAttributes;
     }
 
-    public boolean containsAssociatedRoutingAttribute(AssociatedRoutingAttribute associatedRoutingAttribute) {
+    public boolean containsAssociatedRoutingAttribute(
+            AssociatedRoutingAttribute associatedRoutingAttribute) {
         return this.associatedRoutingAttributes.contains(associatedRoutingAttribute);
     }
 
-    public boolean addAssociatedRoutingAttribute(AssociatedRoutingAttribute associatedRoutingAttribute) {
+    public boolean addAssociatedRoutingAttribute(
+            AssociatedRoutingAttribute associatedRoutingAttribute) {
         return this.associatedRoutingAttributes.add(associatedRoutingAttribute);
     }
 
-    public boolean removeAssociatedRoutingAttribute(AssociatedRoutingAttribute associatedRoutingAttribute) {
+    public boolean removeAssociatedRoutingAttribute(
+            AssociatedRoutingAttribute associatedRoutingAttribute) {
         return this.associatedRoutingAttributes.remove(associatedRoutingAttribute);
     }
 }

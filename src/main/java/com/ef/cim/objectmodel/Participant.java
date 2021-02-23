@@ -2,7 +2,6 @@ package com.ef.cim.objectmodel;
 
 import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
-
 import java.io.Serializable;
 import java.util.UUID;
 
@@ -12,7 +11,6 @@ import java.util.UUID;
         @JsonSubTypes.Type(value = ChannelSession.class, name = "ChannelSession")
 })
 public interface Participant extends Serializable {
-  UUID getId();
-
-  String getDisplayName();
+    UUID getId();
+    String getDisplayName();
 }

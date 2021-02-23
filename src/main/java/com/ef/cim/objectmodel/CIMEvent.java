@@ -1,6 +1,6 @@
 package com.ef.cim.objectmodel;
 
-public enum CIMEvent{
+public enum CIMEvent {
 
     CUSTOMER_MESSAGE,
     AGENT_MESSAGE,

@@ -5,7 +5,7 @@ package com.ef.cim.objectmodel;
  * have one of the three modes: BOT, AGENT, HYBRID
  */
 public enum ChannelMode {
-  BOT,
-  AGENT,
-  HYBRID
+    BOT,
+    AGENT,
+    HYBRID
 }

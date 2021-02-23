@@ -2,11 +2,11 @@ package com.ef.cim.objectmodel;
 
 import java.util.UUID;
 
-public class Agent implements Participant{
+public class Agent implements Participant {
     private final UUID id;
     private String displayName;
 
-    public Agent(){
+    public Agent() {
         this.id = UUID.randomUUID();
     }
 
