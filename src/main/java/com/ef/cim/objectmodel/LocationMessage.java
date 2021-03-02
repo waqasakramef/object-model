@@ -26,4 +26,14 @@ public class LocationMessage extends StructuredMessage {
     public void setLongitude(double longitude) {
         this.longitude = longitude;
     }
+
+    @Override
+    public String toString() {
+        return "LocationMessage{" +
+                "latitude=" + latitude +
+                ", longitude=" + longitude +
+                ", type=" + type +
+                ", markdownText='" + markdownText + '\'' +
+                '}';
+    }
 }

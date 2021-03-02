@@ -16,4 +16,16 @@ public class CarousalButton extends Button {
     public void setButtonHeight(int buttonHeight) {
         this.buttonHeight = buttonHeight;
     }
+
+    @Override
+    public String toString() {
+        return "CarousalButton{" +
+                "title='" + title + '\'' +
+                ", payload='" + payload + '\'' +
+                ", actionType='" + actionType + '\'' +
+                ", bgColor='" + bgColor + '\'' +
+                ", index=" + index +
+                ", buttonHeight=" + buttonHeight +
+                '}';
+    }
 }

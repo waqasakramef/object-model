@@ -107,4 +107,15 @@ public class CarousalMessage extends StructuredMessage {
             this.elements.remove(index);
         }
     }
+
+    @Override
+    public String toString() {
+        return "CarousalMessage{" +
+                "maxWidth=" + maxWidth +
+                ", maxHeight=" + maxHeight +
+                ", elements=" + elements +
+                ", type=" + type +
+                ", markdownText='" + markdownText + '\'' +
+                '}';
+    }
 }

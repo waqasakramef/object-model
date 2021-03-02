@@ -1,13 +1,11 @@
 package com.ef.cim.objectmodel;
 
-import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
 public class AssociatedRoutingAttribute {
     @NotNull
     private RoutingAttribute routingAttribute;
-    @NotBlank
-    private String value;
+    private int value;
 
     public RoutingAttribute getRoutingAttribute() {
         return routingAttribute;
@@ -17,19 +15,19 @@ public class AssociatedRoutingAttribute {
         this.routingAttribute = routingAttribute;
     }
 
-    public String getValue() {
+    public int getValue() {
         return value;
     }
 
-    public void setValue(String value) {
+    public void setValue(int value) {
         this.value = value;
     }
 
     @Override
     public String toString() {
-        return "AssociatedRoutingAttribute{" +
-                "routingAttribute=" + routingAttribute +
-                ", value='" + value + '\'' +
-                '}';
+        return "AssociatedRoutingAttribute{"
+                + "routingAttribute=" + routingAttribute
+                + ", value='" + value + '\''
+                + '}';
     }
 }

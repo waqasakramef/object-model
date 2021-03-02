@@ -26,4 +26,13 @@ public class MultimediaMessage extends StructuredMessage {
     public void setMedia(URL media) {
         this.media = media;
     }
+
+    @Override
+    public String toString() {
+        return "MultimediaMessage{" +
+                "type=" + type +
+                ", markdownText='" + markdownText + '\'' +
+                ", media=" + media +
+                '}';
+    }
 }

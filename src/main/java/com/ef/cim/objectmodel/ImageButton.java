@@ -22,4 +22,14 @@ public class ImageButton extends CarouselElementActions {
     public void setImageUrl(URL imageUrl) {
         this.imageUrl = imageUrl;
     }
+
+    @Override
+    public String toString() {
+        return "ImageButton{" +
+                "actionType='" + actionType + '\'' +
+                ", actionBody='" + actionBody + '\'' +
+                ", height=" + height +
+                ", imageUrl=" + imageUrl +
+                '}';
+    }
 }

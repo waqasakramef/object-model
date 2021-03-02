@@ -19,4 +19,14 @@ public class ImageMessage extends MultimediaMessage {
     public void setSize(long size) {
         this.size = size;
     }
+
+    @Override
+    public String toString() {
+        return "ImageMessage{" +
+                "size=" + size +
+                ", type=" + type +
+                ", markdownText='" + markdownText + '\'' +
+                ", media=" + media +
+                '}';
+    }
 }

@@ -16,4 +16,14 @@ public class CarousalDescriptionButton extends CarouselElementActions {
     public void setText(String text) {
         this.text = text;
     }
+
+    @Override
+    public String toString() {
+        return "CarousalDescriptionButton{" +
+                "text='" + text + '\'' +
+                ", actionType='" + actionType + '\'' +
+                ", actionBody='" + actionBody + '\'' +
+                ", height=" + height +
+                '}';
+    }
 }

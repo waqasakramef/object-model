@@ -38,4 +38,16 @@ public class VideoMessage extends MultimediaMessage {
     public void setLength(int length) {
         this.length = length;
     }
+
+    @Override
+    public String toString() {
+        return "VideoMessage{" +
+                "type=" + type +
+                ", markdownText='" + markdownText + '\'' +
+                ", media=" + media +
+                ", thumbnail=" + thumbnail +
+                ", size=" + size +
+                ", length=" + length +
+                '}';
+    }
 }

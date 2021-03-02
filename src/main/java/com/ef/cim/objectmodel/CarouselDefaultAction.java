@@ -27,4 +27,12 @@ public class CarouselDefaultAction {
     public void setUrl(URL url) {
         this.url = url;
     }
+
+    @Override
+    public String toString() {
+        return "CarouselDefaultAction{" +
+                "type='" + type + '\'' +
+                ", url=" + url +
+                '}';
+    }
 }

@@ -3,8 +3,8 @@ package com.ef.cim.objectmodel;
 import java.util.UUID;
 
 public class ActionMessage implements ICimMessage {
-    private String actionName;
     private final UUID id;
+    private String actionName;
 
     // Default Constructor
     public ActionMessage(String actionName) {
@@ -16,9 +16,6 @@ public class ActionMessage implements ICimMessage {
     public String getActionName() {
         return this.actionName;
     }
-    // public void serActionData(JSONObject actionData) {
-    //   this.actionData = actionData;
-    // }
 
     // Setters
     public void setActionName(String actionName) {
@@ -37,5 +34,13 @@ public class ActionMessage implements ICimMessage {
 
     @Override
     public void setHeader(MessageHeader header) {
+    }
+
+    @Override
+    public String toString() {
+        return "ActionMessage{"
+                + "id=" + id
+                + ", actionName='" + actionName + '\''
+                + '}';
     }
 }

@@ -37,4 +37,16 @@ public class FileMessage extends MultimediaMessage {
     public void setAttachmentMessage(AttachmentMessage attachmentMessage) {
         this.attachmentMessage = attachmentMessage;
     }
+
+    @Override
+    public String toString() {
+        return "FileMessage{" +
+                "fileName='" + fileName + '\'' +
+                ", size=" + size +
+                ", attachmentMessage=" + attachmentMessage +
+                ", type=" + type +
+                ", markdownText='" + markdownText + '\'' +
+                ", media=" + media +
+                '}';
+    }
 }

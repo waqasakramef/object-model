@@ -58,4 +58,13 @@ public class SuggestionMessage implements ICimMessage {
             this.suggestions.remove(index);
         }
     }
+
+    @Override
+    public String toString() {
+        return "SuggestionMessage{" +
+                "id=" + id +
+                ", header=" + header +
+                ", suggestions=" + suggestions +
+                '}';
+    }
 }

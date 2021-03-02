@@ -145,4 +145,15 @@ public class CarousalElement {
             this.buttons.remove(index);
         }
     }
+
+    @Override
+    public String toString() {
+        return "CarousalElement{" +
+                "imageButton=" + imageButton +
+                ", title='" + title + '\'' +
+                ", descriptionButton=" + descriptionButton +
+                ", buttons=" + buttons +
+                ", defaultAction=" + defaultAction +
+                '}';
+    }
 }

@@ -33,4 +33,13 @@ public class AttachmentMessage {
     public void setSize(long size) {
         this.size = size;
     }
+
+    @Override
+    public String toString() {
+        return "AttachmentMessage{" +
+                "name='" + name + '\'' +
+                ", type='" + type + '\'' +
+                ", size=" + size +
+                '}';
+    }
 }
