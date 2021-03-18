@@ -8,7 +8,8 @@ import java.util.UUID;
 @JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "participantType")
 @JsonSubTypes({
         @JsonSubTypes.Type(value = TopicMonitor.class, name = "TopicMonitor"),
-        @JsonSubTypes.Type(value = ChannelSession.class, name = "ChannelSession")
+        @JsonSubTypes.Type(value = ChannelSession.class, name = "ChannelSession"),
+        @JsonSubTypes.Type(value = CCUser.class, name = "CCUser")
 })
 public interface Participant extends Serializable {
     UUID getId();
