@@ -1,10 +1,10 @@
 package com.ef.cim.objectmodel;
 
+import java.io.Serializable;
 import java.sql.Timestamp;
-import java.util.Date;
 import java.util.UUID;
 
-public class CimEvent {
+public class CimEvent implements Serializable {
 
 
     private final UUID id;
@@ -13,7 +13,7 @@ public class CimEvent {
     private Timestamp timestamp;
     private Object data;
 
-    public CimEvent(UUID id) {
+    public CimEvent() {
         this.id = UUID.randomUUID();
     }
     // Getters
