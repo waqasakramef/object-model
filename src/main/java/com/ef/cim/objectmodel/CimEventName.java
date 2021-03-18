@@ -1,7 +1,6 @@
 package com.ef.cim.objectmodel;
 
-public enum CIMEvent {
-
+public enum CimEventName {
     CUSTOMER_MESSAGE,
     AGENT_MESSAGE,
     BOT_MESSAGE,
@@ -24,5 +23,4 @@ public enum CIMEvent {
     MESSAGE_DELIVERY_NOTIFICATION,
     CISCO_VOICE_EVENT,
     WRAPUP_APPLIED
-
 }
