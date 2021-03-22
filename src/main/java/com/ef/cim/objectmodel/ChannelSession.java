@@ -22,7 +22,6 @@ public class ChannelSession implements Participant {
 
     @Id
     private final UUID id;
-    @JsonIgnore
     private final String participantType;
     @Valid
     private Channel channel;
@@ -216,6 +215,14 @@ public class ChannelSession implements Participant {
         this.topicId = topicId;
     }
 
+//    public String getParticipantType() {
+//        return participantType;
+//    }
+//
+//    public void setParticipantType(String participantType) {
+//        this.participantType = participantType;
+//    }
+
     /**
      * Adds a suggested customer to the list of customer suggestions
      *
@@ -259,6 +266,7 @@ public class ChannelSession implements Participant {
     public String toString() {
         return "ChannelSession{" +
                 "id=" + id +
+                ", participantType='" + participantType + '\'' +
                 ", channel=" + channel +
                 ", linkedCustomer=" + linkedCustomer +
                 ", customerSuggestions=" + customerSuggestions +
@@ -266,6 +274,7 @@ public class ChannelSession implements Participant {
                 ", latestIntent='" + latestIntent + '\'' +
                 ", customerPresence=" + customerPresence +
                 ", isActive=" + isActive +
+                ", topicId=" + topicId +
                 '}';
     }
 }

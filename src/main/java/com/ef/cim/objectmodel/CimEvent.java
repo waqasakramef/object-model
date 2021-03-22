@@ -11,6 +11,8 @@ public class CimEvent implements Serializable {
     private CimEventName name;
     private CimEventType type;
     private Timestamp timestamp;
+
+
     private Object data;
 
     public CimEvent() {

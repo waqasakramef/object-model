@@ -9,8 +9,6 @@ import java.util.Map;
 import javax.validation.Valid;
 
 public class MessageHeader implements Serializable {
-
-
     private TopicParticipant sender;
     @Valid
     private ChannelData channelData;

@@ -17,9 +17,11 @@ public class CCUser implements Participant {
     @Valid
     private KeycloakUser keycloakUser;
     private List<AssociatedRoutingAttribute> associatedRoutingAttributes;
+    private final String participantType;
 
     public CCUser() {
         this.associatedRoutingAttributes = new ArrayList<>();
+        this.participantType = "CCUser";
     }
 
     @JsonIgnore

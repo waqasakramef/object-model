@@ -9,6 +9,10 @@ public class CimMessage implements ICimMessage {
     private MessageHeader header;
     private MessageBody body;
 
+    public CimMessage() {
+        this.id = UUID.randomUUID();
+    }
+
     // Constructor --> Args: header, body
     public CimMessage(MessageHeader header, MessageBody body) {
         this.id = UUID.randomUUID();

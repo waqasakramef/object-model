@@ -1,5 +1,6 @@
 package com.ef.cim.objectmodel;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -14,6 +15,12 @@ public class KeycloakUser {
     @NotNull
     private String lastName;
     private List<String> roles;
+
+    private String username;
+
+    @JsonIgnore
+    private Resources permittedResources;
+    private String realm;
 
     public KeycloakUser() {
         roles = new ArrayList<>();
@@ -61,6 +68,30 @@ public class KeycloakUser {
 
     public boolean removeRole(String role) {
         return this.roles.remove(role);
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public Resources getPermittedResources() {
+        return permittedResources;
+    }
+
+    public void setPermittedResources(Resources permittedResources) {
+        this.permittedResources = permittedResources;
+    }
+
+    public String getRealm() {
+        return realm;
+    }
+
+    public void setRealm(String realm) {
+        this.realm = realm;
     }
 
     @Override
