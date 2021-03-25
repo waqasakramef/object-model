@@ -6,6 +6,10 @@ public class BotSuggestion implements Serializable {
     private MessageBody messageBody;
     private float confidenceLevel;
 
+    public BotSuggestion() {
+
+    }
+
     /**
      * Constructor
      *
