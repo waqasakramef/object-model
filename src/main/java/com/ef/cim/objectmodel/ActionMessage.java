@@ -5,7 +5,11 @@ import java.util.UUID;
 public class ActionMessage implements ICimMessage {
     private final UUID id;
     private String actionName;
+    private MessageHeader header;
 
+    public ActionMessage() {
+        this.id = UUID.randomUUID();
+    }
     // Default Constructor
     public ActionMessage(String actionName) {
         this.actionName = actionName;
@@ -29,11 +33,12 @@ public class ActionMessage implements ICimMessage {
 
     @Override
     public MessageHeader getHeader() {
-        return null;
+        return this.header;
     }
 
     @Override
     public void setHeader(MessageHeader header) {
+        this.header = header;
     }
 
     @Override
