@@ -2,7 +2,9 @@ package com.ef.cim.objectmodel;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import javax.validation.constraints.NotBlank;
 
 /**
@@ -17,10 +19,13 @@ public class ChannelData implements Serializable {
     private String channelCustomerIdentifier;
     @NotBlank
     private String serviceIdentifier;
-    private List<KeyValuePair> additionalAttribute;
+
+    // This field should be List<KeyValuePair>. Changed it for initial integration
+    // with Agent Manager
+    private Map<String, Object> additionalAttribute;
 
     public ChannelData() {
-        this.additionalAttribute = new ArrayList<>();
+        this.additionalAttribute = new HashMap<>();
     }
 
     public String getChannelCustomerIdentifier() {
@@ -39,12 +44,20 @@ public class ChannelData implements Serializable {
         this.serviceIdentifier = serviceIdentifier;
     }
 
-    public List<KeyValuePair> getAdditionalAttribute() {
+    public Map<String, Object> getAdditionalAttribute() {
         return additionalAttribute;
     }
 
-    public void setAdditionalAttribute(List<KeyValuePair> additionalAttribute) {
+    public void setAdditionalAttribute(Map<String, Object> additionalAttribute) {
         this.additionalAttribute = additionalAttribute;
+    }
+
+    public void addAdditionalAttribute(String key, Object value) {
+        this.additionalAttribute.put(key, value);
+    }
+
+    public void removeAdditionalAttribute(String key) {
+        this.additionalAttribute.remove(key);
     }
 
     /**

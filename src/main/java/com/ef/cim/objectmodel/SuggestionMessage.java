@@ -8,6 +8,7 @@ public class SuggestionMessage implements ICimMessage {
     private final UUID id;
     private MessageHeader header;
     private List<BotSuggestion> suggestions;
+    private CimMessage requestedMessage;
 
     // Default Constructor
     public SuggestionMessage() {
@@ -31,7 +32,7 @@ public class SuggestionMessage implements ICimMessage {
 
     public List<BotSuggestion> getSuggestions() {
         if (this.suggestions == null) {
-            this.suggestions = new ArrayList<BotSuggestion>();
+            this.suggestions = new ArrayList<>();
         }
         return this.suggestions;
     }
@@ -42,7 +43,7 @@ public class SuggestionMessage implements ICimMessage {
 
     public void addSuggestion(BotSuggestion suggestion) {
         if (this.suggestions == null) {
-            this.suggestions = new ArrayList<BotSuggestion>();
+            this.suggestions = new ArrayList<>();
         }
         this.suggestions.add(suggestion);
     }
@@ -59,12 +60,21 @@ public class SuggestionMessage implements ICimMessage {
         }
     }
 
+    public CimMessage getRequestedMessage() {
+        return requestedMessage;
+    }
+
+    public void setRequestedMessage(CimMessage requestedMessage) {
+        this.requestedMessage = requestedMessage;
+    }
+
     @Override
     public String toString() {
         return "SuggestionMessage{" +
                 "id=" + id +
                 ", header=" + header +
                 ", suggestions=" + suggestions +
+                ", requestedMessage=" + requestedMessage +
                 '}';
     }
 }
