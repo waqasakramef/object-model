@@ -5,8 +5,6 @@ import java.util.UUID;
 
 public interface ICimMessage extends Serializable {
     UUID getId();
-
     MessageHeader getHeader();
-
     void setHeader(MessageHeader header);
 }

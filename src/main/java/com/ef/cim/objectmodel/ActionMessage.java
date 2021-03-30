@@ -4,16 +4,16 @@ import java.util.UUID;
 
 public class ActionMessage implements ICimMessage {
     private final UUID id;
-    private String actionName;
     private MessageHeader header;
+    private String actionName;
 
     public ActionMessage() {
         this.id = UUID.randomUUID();
     }
-    // Default Constructor
+
     public ActionMessage(String actionName) {
-        this.actionName = actionName;
         this.id = UUID.randomUUID();
+        this.actionName = actionName;
     }
 
     // Getters
@@ -43,9 +43,10 @@ public class ActionMessage implements ICimMessage {
 
     @Override
     public String toString() {
-        return "ActionMessage{"
-                + "id=" + id
-                + ", actionName='" + actionName + '\''
-                + '}';
+        return "ActionMessage{" +
+                "id=" + id +
+                ", actionName='" + actionName + '\'' +
+                ", header=" + header +
+                '}';
     }
 }

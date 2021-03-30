@@ -11,7 +11,7 @@ import javax.validation.constraints.NotNull;
  */
 @Valid
 public class ChannelConfig implements Serializable {
-    private final UUID id;
+    private UUID id;
     @NotNull(message = "Channel Mode is mandatory")
     private ChannelMode channelMode;
     @NotNull(message = "SelfServiceBot is mandatory")
@@ -43,6 +43,10 @@ public class ChannelConfig implements Serializable {
      */
     public UUID getId() {
         return this.id;
+    }
+
+    public void setId(UUID id) {
+        this.id = id;
     }
 
     /**

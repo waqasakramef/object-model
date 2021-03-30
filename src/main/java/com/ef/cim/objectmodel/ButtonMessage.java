@@ -13,7 +13,7 @@ public class ButtonMessage extends StructuredMessage {
      */
     public ButtonMessage() {
         super(MessageType.BUTTON);
-        buttons = new ArrayList<Button>();
+        buttons = new ArrayList<>();
         text = "";
         composerInputDisabled = true;
     }
