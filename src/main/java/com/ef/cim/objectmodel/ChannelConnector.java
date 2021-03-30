@@ -6,7 +6,7 @@ import java.util.UUID;
 import javax.validation.Valid;
 
 public class ChannelConnector implements Serializable {
-    private final UUID id;
+    private UUID id;
     private String channelConnectorName;
     private URL channelWebhook;
     @Valid
@@ -61,6 +61,9 @@ public class ChannelConnector implements Serializable {
     public void setTenant(Tenant tenant) {
         this.tenant = tenant;
     }
+
+    public void setId(UUID id) { this.id = id; }
+
 
     /***
      * String Representation of ChannelConnector

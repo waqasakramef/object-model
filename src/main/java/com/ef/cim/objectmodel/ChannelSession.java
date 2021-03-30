@@ -22,6 +22,8 @@ public class ChannelSession implements Participant {
 
     @Id
     private final UUID id;
+
+    @JsonIgnore
     private final String participantType;
     @Valid
     private Channel channel;
@@ -184,7 +186,7 @@ public class ChannelSession implements Participant {
      *
      * @return {@code boolean}
      */
-    public boolean isActive() {
+    public boolean getIsActive() {
         return this.isActive;
     }
 
@@ -193,7 +195,7 @@ public class ChannelSession implements Participant {
      *
      * @param active, of type {@code boolean}
      */
-    public void setActive(boolean active) {
+    public void setIsActive(boolean active) {
         this.isActive = active;
     }
 

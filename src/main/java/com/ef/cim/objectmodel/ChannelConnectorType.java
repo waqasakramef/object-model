@@ -9,7 +9,7 @@ import javax.validation.constraints.NotNull;
  * viber e.t.c.
  */
 public class ChannelConnectorType implements Serializable {
-    private final UUID id;
+    private UUID id;
     @NotNull
     private ChannelType name;
     private boolean isInteractive;
@@ -55,7 +55,7 @@ public class ChannelConnectorType implements Serializable {
      *
      * @return {@code boolean}
      */
-    public boolean isInteractive() {
+    public boolean getIsInteractive() {
         return this.isInteractive;
     }
 
@@ -64,8 +64,13 @@ public class ChannelConnectorType implements Serializable {
      *
      * @param interactive, of type {@code boolean}
      */
-    public void setInteractive(boolean interactive) {
+    public void setIsInteractive(boolean interactive) {
         this.isInteractive = interactive;
+    }
+
+
+    public void setId(UUID id) {
+        this.id = id;
     }
 
     /***

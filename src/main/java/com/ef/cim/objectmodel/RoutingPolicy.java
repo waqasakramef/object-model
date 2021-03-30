@@ -5,12 +5,16 @@ import java.util.UUID;
 
 public class RoutingPolicy implements Serializable {
     PolicyType policy;
-    private final UUID queueID;
+    private UUID queueID;
 
     // Constructor
     public RoutingPolicy() {
         this.queueID = UUID.randomUUID();
     }
+
+
+
+
 
     // Getters
     public UUID getQueueID() {
@@ -24,6 +28,8 @@ public class RoutingPolicy implements Serializable {
     public void setPolicy(PolicyType policy) {
         this.policy = policy;
     }
+
+    public void setQueueID(UUID queueID) { this.queueID = queueID; }
 
     /***
      * String Representation of RoutingPolicy

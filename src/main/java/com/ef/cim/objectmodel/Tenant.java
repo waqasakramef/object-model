@@ -4,7 +4,7 @@ import java.io.Serializable;
 import java.util.UUID;
 
 public class Tenant implements Serializable {
-    private final UUID id;
+    private UUID id;
     private String name;
 //  private KeyCloakRealm realm; // Class KeyCloakRealm Empty | not in object model
 
@@ -18,6 +18,7 @@ public class Tenant implements Serializable {
     public UUID getId() {
         return this.id;
     }
+
 
     public String getName() {
         return this.name;
@@ -33,7 +34,10 @@ public class Tenant implements Serializable {
     public void setName(String name) {
         this.name = name;
     }
-/*
+
+    public void setId(UUID id) { this.id = id; }
+
+    /*
   public void setRealmID(KeyCloakRealm realm) {
     this.realm = realm;
   }*/
