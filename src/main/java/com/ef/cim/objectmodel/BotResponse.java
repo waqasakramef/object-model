@@ -4,7 +4,7 @@ import java.util.List;
 
 public class BotResponse {
     private NLUIntent intent;
-    private List<ICimMessage> messages;
+    private List<BotResponseMessage> messages;
 
     public NLUIntent getIntent() {
         return this.intent;
@@ -14,11 +14,11 @@ public class BotResponse {
         this.intent = intent;
     }
 
-    public List<ICimMessage> getMessages() {
+    public List<BotResponseMessage> getMessages() {
         return this.messages;
     }
 
-    public void setMessages(List<ICimMessage> messages) {
+    public void setMessages(List<BotResponseMessage> messages) {
         this.messages = messages;
     }
 }
