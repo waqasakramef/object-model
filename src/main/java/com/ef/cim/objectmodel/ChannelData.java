@@ -2,9 +2,7 @@ package com.ef.cim.objectmodel;
 
 import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import javax.validation.constraints.NotBlank;
 
 /**
@@ -22,10 +20,10 @@ public class ChannelData implements Serializable {
 
     // This field should be List<KeyValuePair>. Changed it for initial integration
     // with Agent Manager
-    private Map<String, Object> additionalAttribute;
+    private List<KeyValuePair> additionalAttributes;
 
     public ChannelData() {
-        this.additionalAttribute = new HashMap<>();
+        this.additionalAttributes = new ArrayList<>();
     }
 
     public String getChannelCustomerIdentifier() {
@@ -44,20 +42,18 @@ public class ChannelData implements Serializable {
         this.serviceIdentifier = serviceIdentifier;
     }
 
-    public Map<String, Object> getAdditionalAttribute() {
-        return additionalAttribute;
-    }
+    public List<KeyValuePair> getAdditionalAttributes() { return additionalAttributes; }
 
-    public void setAdditionalAttribute(Map<String, Object> additionalAttribute) {
-        this.additionalAttribute = additionalAttribute;
-    }
+    public void setAdditionalAttributes(List<KeyValuePair> additionalAttributes) { this.additionalAttributes = additionalAttributes; }
 
-    public void addAdditionalAttribute(String key, Object value) {
-        this.additionalAttribute.put(key, value);
+    public void addAdditionalAttribute(String key, String value) {
+        this.additionalAttributes.add(new KeyValuePair(key,value));
     }
-
-    public void removeAdditionalAttribute(String key) {
-        this.additionalAttribute.remove(key);
+    public void removeAdditionalAttribute(KeyValuePair keyValuePair) {
+        this.additionalAttributes.remove(keyValuePair);
+    }
+    public void removeAdditionalAttribute(int index) {
+        this.additionalAttributes.remove(index);
     }
 
     /**
@@ -70,7 +66,7 @@ public class ChannelData implements Serializable {
         return "ChannelData{" +
                 "channelCustomerIdentifier='" + channelCustomerIdentifier + '\'' +
                 ", serviceIdentifier='" + serviceIdentifier + '\'' +
-                ", additionalAttribute=" + additionalAttribute +
+                ", additionalAttributes=" + additionalAttributes +
                 '}';
     }
 }

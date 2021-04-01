@@ -13,6 +13,7 @@ public class TopicParticipant implements Serializable {
     private Timestamp joiningTime;
     private String token;
     private UUID topicId;
+    private boolean isActive;
     private UserCredentials userCredentials; // Class UserCredentials Empty | not in object model
 
     // Constructor
@@ -23,6 +24,7 @@ public class TopicParticipant implements Serializable {
         this.type = type;
         this.role = role;
         this.participant = participant;
+        this.isActive = true;
 
         // TODO: review/discuss if initialization time is indeed the join time?
         this.joiningTime = new Timestamp(System.currentTimeMillis());
@@ -63,6 +65,9 @@ public class TopicParticipant implements Serializable {
         return this.joiningTime;
     }
 
+    public boolean getIsActive() { return this.isActive; }
+
+
     // Setters
 
     public void setJoiningTime(Timestamp joiningTime) {
@@ -92,6 +97,11 @@ public class TopicParticipant implements Serializable {
     public void setTopicId(UUID topicId) {
         this.topicId = topicId;
     }
+
+    public void setIsActive(boolean active) {
+        this.isActive = active;
+    }
+
 
     /***
      * String Representation of TopicParticipant
