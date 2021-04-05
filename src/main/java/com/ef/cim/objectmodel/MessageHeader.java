@@ -23,12 +23,12 @@ public class MessageHeader implements Serializable {
     // Default Constructor
     public MessageHeader() {
         //this.channelData = new new Ch
-        this.language = new LanguageCode();
+       // this.language = new LanguageCode();
         this.timestamp = new Timestamp(System.currentTimeMillis());
-        this.securityInfo = new MessageSecurity();
-        this.stamps = new ArrayList<String>();
-        this.entities = new HashMap<String, Object>();
-        this.channelSession = new ChannelSession();
+//        this.securityInfo = new MessageSecurity();
+//        this.stamps = new ArrayList<String>();
+//        this.entities = new HashMap<String, Object>();
+//        this.channelSession = new ChannelSession();
     }
 
     // Getters

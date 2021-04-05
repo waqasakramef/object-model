@@ -3,7 +3,7 @@ package com.ef.cim.objectmodel;
 import java.util.UUID;
 
 public class TopicMonitor implements Participant {
-    private final UUID id;
+    private UUID id;
     private final String displayName;
 
     private final String participantType;
@@ -28,4 +28,6 @@ public class TopicMonitor implements Participant {
     public String getParticipantType() {
         return participantType;
     }
+
+    public void setId(UUID id) { this.id = id; }
 }

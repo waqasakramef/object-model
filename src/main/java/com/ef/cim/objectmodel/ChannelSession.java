@@ -21,7 +21,7 @@ import org.springframework.data.annotation.Id;
 public class ChannelSession implements Participant {
 
     @Id
-    private final UUID id;
+    private UUID id;
 
     @JsonIgnore
     private final String participantType;
@@ -54,6 +54,10 @@ public class ChannelSession implements Participant {
         this.customerPresence = new UndefinedObject();
         this.isActive = true;
         this.participantType = "ChannelSession";
+    }
+
+    public void setId(UUID id) {
+        this.id = id;
     }
 
     /**
