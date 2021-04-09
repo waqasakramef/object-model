@@ -6,6 +6,15 @@ public class NLUIntent implements Serializable {
     private String name;
     private double confidence;
 
+    public NLUIntent() {
+
+    }
+
+    public NLUIntent(String name, double confidence) {
+        this.name = name;
+        this.confidence = confidence;
+    }
+
     public String getName() {
         return this.name;
     }

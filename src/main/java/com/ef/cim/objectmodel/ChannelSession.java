@@ -3,6 +3,7 @@ package com.ef.cim.objectmodel;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 import java.util.UUID;
 import javax.validation.Valid;
 import javax.validation.constraints.NotBlank;
@@ -262,6 +263,23 @@ public class ChannelSession implements Participant {
         if (this.customerSuggestions != null) {
             this.customerSuggestions.remove(index);
         }
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        ChannelSession that = (ChannelSession) o;
+        return Objects.equals(id, that.id);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id);
     }
 
     /***
