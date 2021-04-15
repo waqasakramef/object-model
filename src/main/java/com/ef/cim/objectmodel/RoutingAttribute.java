@@ -16,7 +16,7 @@ public class RoutingAttribute {
     @Size(max = 500)
     private String description;
     @NotNull
-    private AttributeType type;
+    private RoutingAttributeType type;
     private int defaultValue;
 
     public UUID getId() {
@@ -43,11 +43,11 @@ public class RoutingAttribute {
         this.description = description;
     }
 
-    public AttributeType getType() {
+    public RoutingAttributeType getType() {
         return type;
     }
 
-    public void setType(AttributeType type) {
+    public void setType(RoutingAttributeType type) {
         this.type = type;
     }
 

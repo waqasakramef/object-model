@@ -12,6 +12,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
  */
 @Document(collection = "Channel")
 public class Channel implements Serializable {
+
     private UUID id;
     //  private ChannelType type;
     @NotEmpty
@@ -19,32 +20,33 @@ public class Channel implements Serializable {
     // Class ServiceIdentifier Empty | not in object model yet
     @Id
     private String serviceIdentifier;
-    //  private Tenant tenant;
+    private Tenant tenant;
     @Valid
     private ChannelConfig channelConfig;
     @Valid
     private ChannelConnector channelConnector;
 
     /**
-     * Default Constructor, Sets an immutable Unique Identifying Number for the channel Initializes all
-     * the instance member objects except the Strings
+     * Default Constructor, Sets an immutable Unique Identifying Number for the channel Initializes all the instance
+     * member objects except the Strings
      */
     public Channel() {
         this.id = UUID.randomUUID();
         //  this.type = new ChannelType();
         this.serviceIdentifier = "";
-        //   this.tenant = new Tenant();
+        this.tenant = new Tenant();
         this.channelConfig = new ChannelConfig();
         this.channelConnector = new ChannelConnector();
     }
 
     public Channel(String channelName, String serviceIdentifier, ChannelConfig channelConfig,
-                   ChannelConnector channelConnector) {
+            ChannelConnector channelConnector, Tenant tenant) {
         this.id = UUID.randomUUID();
         this.channelName = channelName;
         this.serviceIdentifier = serviceIdentifier;
         this.channelConfig = channelConfig;
         this.channelConnector = channelConnector;
+        this.tenant = tenant;
     }
 
     /**
@@ -161,6 +163,14 @@ public class Channel implements Serializable {
 
     public void setChannelConnector(ChannelConnector channelConnector) {
         this.channelConnector = channelConnector;
+    }
+
+    public Tenant getTenant() {
+        return tenant;
+    }
+
+    public void setTenant(Tenant tenant) {
+        this.tenant = tenant;
     }
 
     /***

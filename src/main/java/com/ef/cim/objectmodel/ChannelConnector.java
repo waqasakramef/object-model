@@ -4,14 +4,18 @@ import java.io.Serializable;
 import java.net.URL;
 import java.util.UUID;
 import javax.validation.Valid;
+import javax.validation.constraints.NotBlank;
 
 public class ChannelConnector implements Serializable {
     private UUID id;
+    @NotBlank
     private String channelConnectorName;
+    @NotBlank
     private URL channelWebhook;
     @Valid
-    private ChannelConnectorType type;
-    private UndefinedObject channelLogo;
+    private ChannelType channelType;
+//    private UndefinedObject channelLogo;
+    private FormData formData;
     private Tenant tenant;
 
     public ChannelConnector() {
@@ -38,20 +42,29 @@ public class ChannelConnector implements Serializable {
         this.channelWebhook = channelWebhook;
     }
 
-    public ChannelConnectorType getType() {
-        return type;
+    public ChannelType getChannelType() {
+        return channelType;
     }
 
-    public void setType(ChannelConnectorType type) {
-        this.type = type;
+    public void setChannelType(ChannelType channelType) {
+        this.channelType = channelType;
     }
 
-    public UndefinedObject getChannelLogo() {
-        return channelLogo;
+//    public UndefinedObject getChannelLogo() {
+//        return channelLogo;
+//    }
+
+//    public void setChannelLogo(UndefinedObject channelLogo) {
+//        this.channelLogo = channelLogo;
+//    }
+
+
+    public FormData getFormData() {
+        return formData;
     }
 
-    public void setChannelLogo(UndefinedObject channelLogo) {
-        this.channelLogo = channelLogo;
+    public void setFormData(FormData formData) {
+        this.formData = formData;
     }
 
     public Tenant getTenant() {
@@ -75,8 +88,8 @@ public class ChannelConnector implements Serializable {
                 "id=" + id +
                 ", channelConnectorName='" + channelConnectorName + '\'' +
                 ", channelWebhook=" + channelWebhook +
-                ", type=" + type +
-                ", channelLogo=" + channelLogo +
+                ", type=" + channelType +
+                ", formData=" + formData +
                 ", tenant=" + tenant +
                 '}';
     }
