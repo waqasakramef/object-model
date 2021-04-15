@@ -17,7 +17,7 @@ public class CCUser implements Participant {
     @Valid
     private KeycloakUser keycloakUser;
     private List<AssociatedRoutingAttribute> associatedRoutingAttributes;
-    private final String participantType;
+    private String participantType;
 
     public CCUser() {
         this.associatedRoutingAttributes = new ArrayList<>();
@@ -72,5 +72,13 @@ public class CCUser implements Participant {
     public boolean removeAssociatedRoutingAttribute(
             AssociatedRoutingAttribute associatedRoutingAttribute) {
         return this.associatedRoutingAttributes.remove(associatedRoutingAttribute);
+    }
+
+    public String getParticipantType() {
+        return participantType;
+    }
+
+    public void setParticipantType(String participantType) {
+        this.participantType = participantType.equals("CCUser") ? participantType : "CCUser";
     }
 }
