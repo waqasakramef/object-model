@@ -3,6 +3,7 @@ package com.ef.cim.objectmodel;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 import java.util.UUID;
 import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
@@ -80,5 +81,32 @@ public class CCUser implements Participant {
 
     public void setParticipantType(String participantType) {
         this.participantType = participantType.equals("CCUser") ? participantType : "CCUser";
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        CCUser ccUser = (CCUser) o;
+        return Objects.equals(id, ccUser.id);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id);
+    }
+
+    @Override
+    public String toString() {
+        return "CCUser{" +
+                "id=" + id +
+                ", keycloakUser=" + keycloakUser +
+                ", associatedRoutingAttributes=" + associatedRoutingAttributes +
+                ", participantType='" + participantType + '\'' +
+                '}';
     }
 }
