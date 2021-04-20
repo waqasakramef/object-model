@@ -1,5 +1,6 @@
 package com.ef.cim.objectmodel;
 
+import java.util.Objects;
 import java.util.UUID;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
@@ -57,6 +58,23 @@ public class RoutingAttribute {
 
     public void setDefaultValue(int defaultValue) {
         this.defaultValue = defaultValue;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        RoutingAttribute that = (RoutingAttribute) o;
+        return Objects.equals(id, that.id);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id);
     }
 
     @Override
