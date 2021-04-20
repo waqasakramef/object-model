@@ -5,6 +5,7 @@ import java.util.UUID;
 import javax.validation.Valid;
 import javax.validation.constraints.NotEmpty;
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 /**
@@ -23,7 +24,7 @@ public class Channel implements Serializable {
     private Tenant tenant;
     @Valid
     private ChannelConfig channelConfig;
-    @Valid
+    @DBRef
     private ChannelConnector channelConnector;
 
     /**
@@ -165,6 +166,16 @@ public class Channel implements Serializable {
         this.channelConnector = channelConnector;
     }
 
+
+//    public UUID getChannelConnectorId() {
+//        return channelConnectorId;
+//    }
+//
+//    public void setChannelConnectorId(UUID channelConnectorId) {
+//        this.channelConnectorId = channelConnectorId;
+//    }
+
+
     public Tenant getTenant() {
         return tenant;
     }
@@ -184,7 +195,7 @@ public class Channel implements Serializable {
                 ", channelName='" + channelName + '\'' +
                 ", serviceIdentifier='" + serviceIdentifier + '\'' +
                 ", channelConfig=" + channelConfig +
-                ", channelConnector=" + channelConnector +
+//                ", channelConnector=" + channelConnector +
                 '}';
     }
 

@@ -3,19 +3,22 @@ package com.ef.cim.objectmodel;
 import java.io.Serializable;
 import java.net.URL;
 import java.util.UUID;
-import javax.validation.Valid;
 import javax.validation.constraints.NotBlank;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.DBRef;
+import org.springframework.data.mongodb.core.mapping.Document;
 
+@Document(collection = "ChannelConnector")
 public class ChannelConnector implements Serializable {
+    @Id
     private UUID id;
     @NotBlank
     private String channelConnectorName;
-    @NotBlank
     private URL channelWebhook;
-    @Valid
+    @DBRef
     private ChannelType channelType;
 //    private UndefinedObject channelLogo;
-    private FormData formData;
+    private FormData channelConnectorData;
     private Tenant tenant;
 
     public ChannelConnector() {
@@ -59,12 +62,12 @@ public class ChannelConnector implements Serializable {
 //    }
 
 
-    public FormData getFormData() {
-        return formData;
+    public FormData getChannelConnectorData() {
+        return channelConnectorData;
     }
 
-    public void setFormData(FormData formData) {
-        this.formData = formData;
+    public void setChannelConnectorData(FormData channelConnectorData) {
+        this.channelConnectorData = channelConnectorData;
     }
 
     public Tenant getTenant() {
@@ -89,7 +92,7 @@ public class ChannelConnector implements Serializable {
                 ", channelConnectorName='" + channelConnectorName + '\'' +
                 ", channelWebhook=" + channelWebhook +
                 ", type=" + channelType +
-                ", formData=" + formData +
+                ", formData=" + channelConnectorData +
                 ", tenant=" + tenant +
                 '}';
     }

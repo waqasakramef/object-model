@@ -3,12 +3,16 @@ package com.ef.cim.objectmodel;
 import java.io.Serializable;
 import java.util.UUID;
 import javax.validation.constraints.NotBlank;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 /**
- * A {@code ChannelType} object represents the type of a particular channel e.g. whatsapp, web,
- * viber e.t.c.
+ * A {@code ChannelType} object represents the type of a particular channel e.g. whatsapp, web, viber e.t.c.
  */
+@Document(collection = "ChannelType")
 public class ChannelType implements Serializable {
+
+    @Id
     private UUID id;
     @NotBlank
     private String typeName;
@@ -18,8 +22,8 @@ public class ChannelType implements Serializable {
 
 
     /**
-     * Default Constructor, Sets an immutable unique identifier for the channel type object. Sets the is
-     * channel type interactive flag as {@code false}
+     * Default Constructor, Sets an immutable unique identifier for the channel type object. Sets the is channel type
+     * interactive flag as {@code false}
      */
     public ChannelType() {
         this.id = UUID.randomUUID();
@@ -84,13 +88,6 @@ public class ChannelType implements Serializable {
         this.channelLogo = channelLogo;
     }
 
-    public boolean isInteractive() {
-        return isInteractive;
-    }
-
-    public void setInteractive(boolean interactive) {
-        isInteractive = interactive;
-    }
 
     public Form getChannelConfigSchema() {
         return channelConfigSchema;
@@ -100,6 +97,7 @@ public class ChannelType implements Serializable {
         this.channelConfigSchema = channelConfigSchema;
     }
 
+
     /***
      * String Representation of ChannelType
      * @return String
@@ -108,8 +106,10 @@ public class ChannelType implements Serializable {
     public String toString() {
         return "ChannelType{" +
                 "id=" + id +
-                ", name='" + typeName + '\'' +
+                ", typeName='" + typeName + '\'' +
+                ", channelLogo=" + channelLogo +
                 ", isInteractive=" + isInteractive +
+                ", channelConfigSchema=" + channelConfigSchema +
                 '}';
     }
 }
