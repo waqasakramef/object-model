@@ -24,7 +24,7 @@ public class Channel implements Serializable {
     private Tenant tenant;
     @Valid
     private ChannelConfig channelConfig;
-    @DBRef
+    @DBRef(lazy = true)
     private ChannelConnector channelConnector;
 
     /**
