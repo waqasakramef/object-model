@@ -15,7 +15,7 @@ public class ChannelConnector implements Serializable {
     @NotBlank
     private String channelConnectorName;
     private URL channelWebhook;
-    @DBRef(lazy = true)
+    @DBRef
     private ChannelType channelType;
 //    private UndefinedObject channelLogo;
     private FormData channelConnectorData;
