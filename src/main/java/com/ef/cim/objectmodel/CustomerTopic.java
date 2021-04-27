@@ -9,6 +9,7 @@ public class CustomerTopic implements Serializable {
     private final UUID id;
     private List<TopicParticipant> participants;
     private List<CimEvent> cimEvents;
+    private TopicState state;
 
     // Default Constructor
     public CustomerTopic() {
@@ -30,10 +31,14 @@ public class CustomerTopic implements Serializable {
         return this.participants;
     }
 
+    public TopicState getState() { return this.state; }
+
     // Setters
     public void setParticipants(List<TopicParticipant> participants) {
         this.participants = participants;
     }
+
+    public void setState(TopicState topicState) { this.state = topicState; }
 
     public void addParticipant(TopicParticipant participant) {
         if (this.participants == null) {
@@ -72,6 +77,7 @@ public class CustomerTopic implements Serializable {
                 "id=" + id +
                 ", participants=" + participants +
                 ", cimEvents=" + cimEvents +
+                ", state=" + state +
                 '}';
     }
 }

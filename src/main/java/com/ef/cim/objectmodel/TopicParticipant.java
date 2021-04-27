@@ -15,6 +15,8 @@ public class TopicParticipant implements Serializable {
     private UUID topicId;
     private boolean isActive;
     private UserCredentials userCredentials; // Class UserCredentials Empty | not in object model
+    private TopicParticipantState state;
+    private Timestamp stateChangedOn;
 
     // Constructor
     public TopicParticipant(@JsonProperty("type") ParticipantType type,
@@ -67,6 +69,10 @@ public class TopicParticipant implements Serializable {
 
     public boolean getIsActive() { return this.isActive; }
 
+    public TopicParticipantState getState() { return this.state; }
+
+    public Timestamp getStateChangedOn() { return this.stateChangedOn; }
+
 
     // Setters
 
@@ -102,6 +108,10 @@ public class TopicParticipant implements Serializable {
         this.isActive = active;
     }
 
+    public void setState(TopicParticipantState topicParticipantState) { this.state = topicParticipantState; }
+
+    public void setStateChangedOn(Timestamp timestamp) { this.stateChangedOn = timestamp; }
+
 
     /***
      * String Representation of TopicParticipant
@@ -117,7 +127,10 @@ public class TopicParticipant implements Serializable {
                 ", joiningTime=" + joiningTime +
                 ", token='" + token + '\'' +
                 ", topicId=" + topicId +
+                ", isActive=" + isActive +
                 ", userCredentials=" + userCredentials +
+                ", state=" + state +
+                ", stateChangedOn=" + stateChangedOn +
                 '}';
     }
 }

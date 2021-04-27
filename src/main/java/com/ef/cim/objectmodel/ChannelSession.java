@@ -39,6 +39,7 @@ public class ChannelSession implements Participant {
     private boolean isActive;
     @NotBlank
     private UUID topicId;
+    private ChannelSessionState state;
 
 
     /**
@@ -265,6 +266,14 @@ public class ChannelSession implements Participant {
         }
     }
 
+    public ChannelSessionState getState() {
+        return state;
+    }
+
+    public void setState(ChannelSessionState state) {
+        this.state = state;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) {
@@ -283,7 +292,7 @@ public class ChannelSession implements Participant {
     }
 
     /***
-     * String Representation of ChannelSession
+     * String Representation of ChannelSession.
      * @return String
      */
     @Override
@@ -299,6 +308,7 @@ public class ChannelSession implements Participant {
                 ", customerPresence=" + customerPresence +
                 ", isActive=" + isActive +
                 ", topicId=" + topicId +
+                ", state=" + state +
                 '}';
     }
 }
