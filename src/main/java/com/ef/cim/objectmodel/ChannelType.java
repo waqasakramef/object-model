@@ -19,7 +19,7 @@ public class ChannelType implements Serializable {
     private UndefinedObject channelLogo;
     private boolean isInteractive;
     private Form channelConfigSchema;
-
+    private UUID mediaRoutingDomain;
 
     /**
      * Default Constructor, Sets an immutable unique identifier for the channel type object. Sets the is channel type
@@ -97,6 +97,13 @@ public class ChannelType implements Serializable {
         this.channelConfigSchema = channelConfigSchema;
     }
 
+    public UUID getMediaRoutingDomain() {
+        return mediaRoutingDomain;
+    }
+
+    public void setMediaRoutingDomain(UUID mediaRoutingDomain) {
+        this.mediaRoutingDomain = mediaRoutingDomain;
+    }
 
     /***
      * String Representation of ChannelType
@@ -110,6 +117,7 @@ public class ChannelType implements Serializable {
                 ", channelLogo=" + channelLogo +
                 ", isInteractive=" + isInteractive +
                 ", channelConfigSchema=" + channelConfigSchema +
+                ", mediaRoutingDomain=" + mediaRoutingDomain +
                 '}';
     }
 }

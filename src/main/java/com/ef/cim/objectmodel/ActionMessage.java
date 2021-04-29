@@ -1,29 +1,34 @@
 package com.ef.cim.objectmodel;
 
+import java.util.HashMap;
+import java.util.Map;
 import java.util.UUID;
 
 public class ActionMessage implements ICimMessage {
     private final UUID id;
     private MessageHeader header;
-    private String actionName;
+    private String name;
+    private Map<String, Object> data;
 
     public ActionMessage() {
         this.id = UUID.randomUUID();
+        this.data = new HashMap<>();
     }
 
-    public ActionMessage(String actionName) {
+    public ActionMessage(String name) {
         this.id = UUID.randomUUID();
-        this.actionName = actionName;
+        this.name = name;
+        this.data = new HashMap<>();
     }
 
     // Getters
-    public String getActionName() {
-        return this.actionName;
+    public String getName() {
+        return this.name;
     }
 
     // Setters
-    public void setActionName(String actionName) {
-        this.actionName = actionName;
+    public void setName(String name) {
+        this.name = name;
     }
 
     @Override
@@ -41,12 +46,21 @@ public class ActionMessage implements ICimMessage {
         this.header = header;
     }
 
+    public Map<String, Object> getData() {
+        return data;
+    }
+
+    public void setData(Map<String, Object> data) {
+        this.data = data;
+    }
+
     @Override
     public String toString() {
         return "ActionMessage{" +
                 "id=" + id +
-                ", actionName='" + actionName + '\'' +
                 ", header=" + header +
+                ", name='" + name + '\'' +
+                ", data=" + data +
                 '}';
     }
 }

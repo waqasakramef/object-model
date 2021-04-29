@@ -4,42 +4,50 @@ import java.io.Serializable;
 import java.util.UUID;
 
 public class RoutingPolicy implements Serializable {
-    PolicyType policy;
-    private UUID queueID;
+    private AgentSelectionPolicy agentSelectionPolicy;
+    private UUID defaultQueue;
+    private boolean routeToLastAgent;
+    private int agentRequestTtl;
 
-    // Constructor
-    public RoutingPolicy() {
-        this.queueID = UUID.randomUUID();
+    public AgentSelectionPolicy getAgentSelectionPolicy() {
+        return agentSelectionPolicy;
     }
 
-
-
-
-
-    // Getters
-    public UUID getQueueID() {
-        return this.queueID;
+    public void setAgentSelectionPolicy(AgentSelectionPolicy agentSelectionPolicy) {
+        this.agentSelectionPolicy = agentSelectionPolicy;
     }
 
-    public PolicyType getPolicy() {
-        return policy;
+    public UUID getDefaultQueue() {
+        return defaultQueue;
     }
 
-    public void setPolicy(PolicyType policy) {
-        this.policy = policy;
+    public void setDefaultQueue(UUID defaultQueue) {
+        this.defaultQueue = defaultQueue;
     }
 
-    public void setQueueID(UUID queueID) { this.queueID = queueID; }
+    public boolean isRouteToLastAgent() {
+        return routeToLastAgent;
+    }
 
-    /***
-     * String Representation of RoutingPolicy
-     * @return String
-     */
+    public void setRouteToLastAgent(boolean routeToLastAgent) {
+        this.routeToLastAgent = routeToLastAgent;
+    }
+
+    public int getAgentRequestTtl() {
+        return agentRequestTtl;
+    }
+
+    public void setAgentRequestTtl(int agentRequestTtl) {
+        this.agentRequestTtl = agentRequestTtl;
+    }
+
     @Override
     public String toString() {
         return "RoutingPolicy{" +
-                "queueID=" + queueID +
-                ", policy=" + policy +
+                "agentSelectionPolicy=" + agentSelectionPolicy +
+                ", defaultQueue=" + defaultQueue +
+                ", routeToLastAgent=" + routeToLastAgent +
+                ", agentRequestTtl=" + agentRequestTtl +
                 '}';
     }
 }
