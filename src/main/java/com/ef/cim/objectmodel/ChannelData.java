@@ -17,6 +17,7 @@ public class ChannelData implements Serializable {
     private String channelCustomerIdentifier;
     @NotBlank
     private String serviceIdentifier;
+    private int requestPriority;
 
     // This field should be List<KeyValuePair>. Changed it for initial integration
     // with Agent Manager
@@ -56,6 +57,14 @@ public class ChannelData implements Serializable {
         this.additionalAttributes.remove(index);
     }
 
+    public int getRequestPriority() {
+        return requestPriority;
+    }
+
+    public void setRequestPriority(int requestPriority) {
+        this.requestPriority = requestPriority;
+    }
+
     /**
      * String Representation of ChannelData
      *
@@ -66,6 +75,7 @@ public class ChannelData implements Serializable {
         return "ChannelData{" +
                 "channelCustomerIdentifier='" + channelCustomerIdentifier + '\'' +
                 ", serviceIdentifier='" + serviceIdentifier + '\'' +
+                ", requestPriority=" + requestPriority +
                 ", additionalAttributes=" + additionalAttributes +
                 '}';
     }

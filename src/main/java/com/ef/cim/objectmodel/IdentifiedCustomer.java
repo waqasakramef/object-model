@@ -1,10 +1,12 @@
 package com.ef.cim.objectmodel;
 
 import java.io.Serializable;
+import java.util.UUID;
 
 public class IdentifiedCustomer implements Serializable {
     private boolean isAnonymous;
     private Customer associatedCustomer;
+    private UUID lastAssignedAgent;
 
     public IdentifiedCustomer() {
         this.isAnonymous = false;
@@ -26,6 +28,14 @@ public class IdentifiedCustomer implements Serializable {
         this.associatedCustomer = associatedCustomer;
     }
 
+    public UUID getLastAssignedAgent() {
+        return lastAssignedAgent;
+    }
+
+    public void setLastAssignedAgent(UUID lastAssignedAgent) {
+        this.lastAssignedAgent = lastAssignedAgent;
+    }
+
     /***
      * String Representation of IdentifiedCustomer
      * @return String
@@ -35,6 +45,7 @@ public class IdentifiedCustomer implements Serializable {
         return "IdentifiedCustomer{" +
                 "isAnonymous=" + isAnonymous +
                 ", associatedCustomer=" + associatedCustomer +
+                ", lastAssignedAgent=" + lastAssignedAgent +
                 '}';
     }
 }
