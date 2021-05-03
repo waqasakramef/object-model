@@ -7,25 +7,20 @@ import java.util.UUID;
 
 public class CustomerTopic implements Serializable {
     private final UUID id;
+    private UUID customerId;
     private List<TopicParticipant> participants;
-    private List<CimEvent> cimEvents;
     private TopicState state;
 
     // Default Constructor
     public CustomerTopic() {
         this.id = UUID.randomUUID();
         this.participants = new ArrayList<TopicParticipant>();
-        this.cimEvents = new ArrayList<CimEvent>();
     }
 
     // Getters
     public UUID getId() {
         return this.id;
     }
-
-    public List<CimEvent> getCimEvents() { return cimEvents; }
-
-    public void setCimEvents(List<CimEvent> cimEvents) { this.cimEvents = cimEvents; }
 
     public List<TopicParticipant> getParticipants() {
         return this.participants;
@@ -40,6 +35,10 @@ public class CustomerTopic implements Serializable {
 
     public void setState(TopicState topicState) { this.state = topicState; }
 
+    public UUID getCustomerId() { return customerId; }
+
+    public void setCustomerId(UUID customerId) { this.customerId = customerId; }
+
     public void addParticipant(TopicParticipant participant) {
         if (this.participants == null) {
             this.participants = new ArrayList<TopicParticipant>();
@@ -47,13 +46,6 @@ public class CustomerTopic implements Serializable {
         this.participants.add(participant);
     }
 
-
-    public void addCimEvent(CimEvent cimEvent) {
-        if (this.cimEvents == null) {
-            this.cimEvents = new ArrayList<CimEvent>();
-        }
-        this.cimEvents.add(cimEvent);
-    }
 
     public void removeParticipant(TopicParticipant participant) {
         if (this.participants != null) {
@@ -76,7 +68,6 @@ public class CustomerTopic implements Serializable {
         return "CustomerTopic{" +
                 "id=" + id +
                 ", participants=" + participants +
-                ", cimEvents=" + cimEvents +
                 ", state=" + state +
                 '}';
     }
