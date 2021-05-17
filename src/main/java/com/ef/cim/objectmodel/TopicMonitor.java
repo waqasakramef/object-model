@@ -1,5 +1,6 @@
 package com.ef.cim.objectmodel;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import java.util.UUID;
 
 public class TopicMonitor implements Participant {
@@ -15,7 +16,6 @@ public class TopicMonitor implements Participant {
         this.participantType = "TopicMonitor";
     }
 
-    // Getters
     public UUID getId() {
         return this.id;
     }
@@ -24,10 +24,7 @@ public class TopicMonitor implements Participant {
         return this.displayName;
     }
 
-
-    public String getParticipantType() {
-        return participantType;
-    }
-
     public void setId(UUID id) { this.id = id; }
+
+    public String getParticipantType() { return participantType; }
 }

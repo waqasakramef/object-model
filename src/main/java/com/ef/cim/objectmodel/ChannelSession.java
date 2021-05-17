@@ -24,8 +24,8 @@ public class ChannelSession implements Participant {
     @Id
     private UUID id;
 
-    @JsonIgnore
-    private final String participantType;
+    //@JsonIgnore
+    private String participantType;
     @Valid
     private Channel channel;
     @Valid
@@ -223,9 +223,9 @@ public class ChannelSession implements Participant {
         this.topicId = topicId;
     }
 
-//    public String getParticipantType() {
-//        return participantType;
-//    }
+    public String getParticipantType() {
+        return participantType;
+    }
 //
 //    public void setParticipantType(String participantType) {
 //        this.participantType = participantType;
