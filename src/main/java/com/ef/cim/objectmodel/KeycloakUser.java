@@ -1,6 +1,5 @@
 package com.ef.cim.objectmodel;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -18,7 +17,6 @@ public class KeycloakUser {
 
     private String username;
 
-    @JsonIgnore
     private Resources permittedResources;
     private String realm;
 
