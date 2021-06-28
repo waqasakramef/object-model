@@ -29,7 +29,8 @@ public class ChannelSession implements Participant {
     @Valid
     private Channel channel;
     @Valid
-    private IdentifiedCustomer linkedCustomer;
+    private Customer customer;
+
     private List<Customer> customerSuggestions;
     @Valid
     private ChannelData channelData;
@@ -50,7 +51,7 @@ public class ChannelSession implements Participant {
     public ChannelSession() {
         this.id = UUID.randomUUID();
         this.channel = new Channel();
-        this.linkedCustomer = new IdentifiedCustomer();
+        this.customer = new Customer();
         this.customerSuggestions = new ArrayList<Customer>();
         this.channelData = new ChannelData();
         this.customerPresence = new UndefinedObject();
@@ -96,22 +97,16 @@ public class ChannelSession implements Participant {
         this.channel = channel;
     }
 
-    /**
-     * Returns the customer associated with the channel session
-     *
-     * @return {@code Customer}
-     */
-    public IdentifiedCustomer getLinkedCustomer() {
-        return this.linkedCustomer;
+    public Customer getCustomer() { return customer; }
+
+    public void setCustomer(Customer customer) { this.customer = customer; }
+
+    public boolean isActive() {
+        return isActive;
     }
 
-    /**
-     * Sets the customer associated with the channel session
-     *
-     * @param linkedCustomer, object of type {@code Customer}
-     */
-    public void setLinkedCustomer(IdentifiedCustomer linkedCustomer) {
-        this.linkedCustomer = linkedCustomer;
+    public void setActive(boolean active) {
+        isActive = active;
     }
 
     /**
@@ -301,7 +296,7 @@ public class ChannelSession implements Participant {
                 "id=" + id +
                 ", participantType='" + participantType + '\'' +
                 ", channel=" + channel +
-                ", linkedCustomer=" + linkedCustomer +
+                ", customer=" + customer +
                 ", customerSuggestions=" + customerSuggestions +
                 ", channelData=" + channelData +
                 ", latestIntent='" + latestIntent + '\'' +
