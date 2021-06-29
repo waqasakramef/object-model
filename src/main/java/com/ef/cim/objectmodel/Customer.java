@@ -2,20 +2,23 @@ package com.ef.cim.objectmodel;
 
 import com.fasterxml.jackson.annotation.JsonAnyGetter;
 import com.fasterxml.jackson.annotation.JsonAnySetter;
-import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import java.io.Serializable;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 import java.util.UUID;
 import javax.validation.constraints.NotEmpty;
+import org.json.JSONPropertyIgnore;
 
 public class Customer implements Serializable {
 
 
 
 
-    private UUID id;
+
+
+    private String _id;
+
     @NotEmpty(message = "Customer First Name is Mandatory")
     private String firstName;
     private String lastName;
@@ -26,6 +29,8 @@ public class Customer implements Serializable {
     private String viberId;
     private  String facebookId;
     private  String webId;
+    private String createdBy;
+    private  String updatedBy;
     private String createdAt;
     private  String updatedAt;
    @NotEmpty(message = "Is Anonymous Flag is Mandatory")
@@ -52,13 +57,12 @@ public class Customer implements Serializable {
 
     }
 
-
-   public UUID getId() {
-      return id;
+   public String  get_id() {
+      return _id;
    }
 
-   public void setId(UUID id) {
-      this.id = id;
+   public void set_id(String _id) {
+      this._id = _id;
    }
 
    public String getFirstName() {
@@ -156,5 +160,13 @@ public class Customer implements Serializable {
    public void set__v(int __v) {
       this.__v = __v;
    }
+
+   public String getCreatedBy() { return createdBy; }
+
+   public void setCreatedBy(String createdBy) { this.createdBy = createdBy; }
+
+   public String getUpdatedBy() { return updatedBy; }
+
+   public void setUpdatedBy(String updatedBy) { this.updatedBy = updatedBy; }
 
 }
