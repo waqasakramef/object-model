@@ -7,6 +7,7 @@ public class CimMessage implements ICimMessage {
     private final UUID id;
     @Valid
     private MessageHeader header;
+    @Valid
     private MessageBody body;
 
     public CimMessage() {

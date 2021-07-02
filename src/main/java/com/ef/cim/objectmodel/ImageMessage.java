@@ -10,6 +10,11 @@ public class ImageMessage extends MultimediaMessage {
         super(MessageType.IMAGE, media);
     }
 
+    public ImageMessage(URL media,long size){
+        super(MessageType.IMAGE,media);
+        this.size = size;
+    }
+
     // Getters
     public long getSize() {
         return this.size;

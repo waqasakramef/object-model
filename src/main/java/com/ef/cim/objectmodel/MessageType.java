@@ -10,6 +10,7 @@ public enum MessageType {
     CONTACT,
     MULTIMEDIA,
     VIDEO,
+    AUDIO,
     IMAGE,
     FILE,
     DELIVERYNOTIFICATION

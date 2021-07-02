@@ -1,46 +1,90 @@
 package com.ef.cim.objectmodel;
 
+import java.util.List;
+
 public class ContactMessage extends StructuredMessage {
-    private String name;
-    private String phoneNumber;
+
+    private List<Address> addresses;
+    private String birthday;
+    private List<Email> emails;
+    private Name name;
+    private Organization organization;
+    private List<Phone> phones;
+    private List<URL> urls;
+
+
 
     // Default Constructor
     public ContactMessage() {
         super(MessageType.CONTACT);
     }
 
-    // Getters
-    public String getName() {
-        return this.name;
+    public List<Address> getAddresses() {
+        return addresses;
     }
 
-    // Setters
-    public void setName(String name) {
+    public void setAddresses(List<Address> addresses) {
+        this.addresses = addresses;
+    }
+
+    public String getBirthday() {
+        return birthday;
+    }
+
+    public void setBirthday(String birthday) {
+        this.birthday = birthday;
+    }
+
+    public List<Email> getEmails() {
+        return emails;
+    }
+
+    public void setEmails(List<Email> emails) {
+        this.emails = emails;
+    }
+
+    public Name getName() {
+        return name;
+    }
+
+    public void setName(Name name) {
         this.name = name;
     }
 
-    public String getPhoneNumber() {
-        return this.phoneNumber;
+    public Organization getOrganization() {
+        return organization;
     }
 
-    public void setPhoneNumber(String phoneNumber) {
-        this.phoneNumber = phoneNumber;
+    public void setOrganization(Organization organization) {
+        this.organization = organization;
+    }
+
+    public List<Phone> getPhones() {
+        return phones;
+    }
+
+    public void setPhones(List<Phone> phones) {
+        this.phones = phones;
+    }
+
+    public List<URL> getUrls() {
+        return urls;
+    }
+
+    public void setUrls(List<URL> urls) {
+        this.urls = urls;
     }
 
     @Override
     public String toString() {
-        return "ContactMessage{"
-                +
-                "name='" + name + '\''
-                +
-                ", phoneNumber='" + phoneNumber
-                + '\''
-                +
-                ", type=" + type
-                +
-                ", markdownText='"
-                + markdownText + '\''
-                +
+        return "ContactMessage{" +
+                "addresses=" + addresses +
+                ", birthday='" + birthday + '\'' +
+                ", emails=" + emails +
+                ", name=" + name +
+                ", organization=" + organization +
+                ", phones=" + phones +
+                ", urls=" + urls +
                 '}';
     }
 }
