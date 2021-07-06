@@ -34,6 +34,8 @@ public class CCUser implements Participant {
         return null;
     }
 
+
+
     @Override
     public UUID getId() {
         return this.id;
@@ -77,10 +79,6 @@ public class CCUser implements Participant {
 
     public String getParticipantType() {
         return participantType;
-    }
-
-    public void setParticipantType(String participantType) {
-        this.participantType = participantType.equals("CCUser") ? participantType : "CCUser";
     }
 
     @Override

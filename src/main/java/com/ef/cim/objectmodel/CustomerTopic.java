@@ -7,6 +7,7 @@ import java.util.UUID;
 
 public class CustomerTopic implements Serializable {
     private final UUID id;
+    private Customer customer;
     private List<TopicParticipant> participants;
     private TopicState state;
 
@@ -33,6 +34,14 @@ public class CustomerTopic implements Serializable {
     }
 
     public void setState(TopicState topicState) { this.state = topicState; }
+
+    public Customer getCustomer() {
+        return customer;
+    }
+
+    public void setCustomer(Customer customer) {
+        this.customer = customer;
+    }
 
     public void addParticipant(TopicParticipant participant) {
         if (this.participants == null) {
