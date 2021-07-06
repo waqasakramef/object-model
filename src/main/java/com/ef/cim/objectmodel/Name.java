@@ -1,10 +1,10 @@
 package com.ef.cim.objectmodel;
 
 public class Name {
-    private String formattedName;
-    private String firstName;
-    private String lastName;
-    private String middleName;
+    private String formatted_name;
+    private String first_name;
+    private String last_name;
+    private String middle_name;
     private String suffix;
     private String prefix;
 
@@ -16,44 +16,44 @@ public class Name {
 
     public Name(String formattedName, String firstName, String lastName, String middleName, String suffix,
             String prefix) {
-        this.formattedName = formattedName;
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.middleName = middleName;
+        this.formatted_name = formattedName;
+        this.first_name = firstName;
+        this.last_name = lastName;
+        this.middle_name = middleName;
         this.suffix = suffix;
         this.prefix = prefix;
     }
 
-    public String getFormattedName() {
-        return formattedName;
+    public String getFormatted_name() {
+        return formatted_name;
     }
 
-    public void setFormattedName(String formattedName) {
-        this.formattedName = formattedName;
+    public void setFormatted_name(String formatted_name) {
+        this.formatted_name = formatted_name;
     }
 
-    public String getFirstName() {
-        return firstName;
+    public String getFirst_name() {
+        return first_name;
     }
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
+    public void setFirst_name(String first_name) {
+        this.first_name = first_name;
     }
 
-    public String getLastName() {
-        return lastName;
+    public String getLast_name() {
+        return last_name;
     }
 
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
+    public void setLast_name(String last_name) {
+        this.last_name = last_name;
     }
 
-    public String getMiddleName() {
-        return middleName;
+    public String getMiddle_name() {
+        return middle_name;
     }
 
-    public void setMiddleName(String middleName) {
-        this.middleName = middleName;
+    public void setMiddle_name(String middle_name) {
+        this.middle_name = middle_name;
     }
 
     public String getSuffix() {
@@ -75,10 +75,10 @@ public class Name {
     @Override
     public String toString() {
         return "Name{" +
-                "formattedName='" + formattedName + '\'' +
-                ", firstName='" + firstName + '\'' +
-                ", lastName='" + lastName + '\'' +
-                ", middleName='" + middleName + '\'' +
+                "formattedName='" + formatted_name + '\'' +
+                ", firstName='" + first_name + '\'' +
+                ", lastName='" + last_name + '\'' +
+                ", middleName='" + middle_name + '\'' +
                 ", suffix='" + suffix + '\'' +
                 ", prefix='" + prefix + '\'' +
                 '}';
