@@ -23,7 +23,8 @@ import javax.validation.constraints.NotNull;
         @Type(value = ContactMessage.class, name = "CONTACT"),
         @Type(value = LocationMessage.class, name = "LOCATION"),
         @Type(value = CarousalMessage.class, name = "CAROUSAL"),
-        @Type(value = ButtonMessage.class, name = "BUTTON")
+        @Type(value = ButtonMessage.class, name = "BUTTON"),
+        @Type(value = MessageBody.class, name = "PLAIN")
 })
 public class MessageBody implements Serializable {
     @NotNull
