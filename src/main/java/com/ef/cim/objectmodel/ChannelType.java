@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.util.UUID;
 import javax.validation.constraints.NotBlank;
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 /**
@@ -18,6 +19,7 @@ public class ChannelType implements Serializable {
     private String typeName;
     private UndefinedObject channelLogo;
     private boolean isInteractive;
+    @DBRef
     private Form channelConfigSchema;
     private UUID mediaRoutingDomain;
 

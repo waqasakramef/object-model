@@ -5,24 +5,11 @@ import java.util.UUID;
 
 public class Attribute implements Serializable {
 
-    private UUID id;
     private String key;
-    private String displayName;
-    private boolean isRequired;
-    private AttributeType type;
+    private ValueType type;
     private String value;
 
-    public Attribute() {
-        this.id = UUID.randomUUID();
-    }
-
-    public UUID getId() {
-        return id;
-    }
-
-    public void setId(UUID id) {
-        this.id = id;
-    }
+    public Attribute() {}
 
     public String getKey() {
         return key;
@@ -32,27 +19,11 @@ public class Attribute implements Serializable {
         this.key = key;
     }
 
-    public String getDisplayName() {
-        return displayName;
-    }
-
-    public void setDisplayName(String displayName) {
-        this.displayName = displayName;
-    }
-
-    public boolean isRequired() {
-        return isRequired;
-    }
-
-    public void setRequired(boolean required) {
-        isRequired = required;
-    }
-
-    public AttributeType getType() {
+    public ValueType getType() {
         return type;
     }
 
-    public void setType(AttributeType type) {
+    public void setType(ValueType type) {
         this.type = type;
     }
 
@@ -67,10 +38,7 @@ public class Attribute implements Serializable {
     @Override
     public String toString() {
         return "Attribute{" +
-                "id=" + id +
-                ", key='" + key + '\'' +
-                ", displayName='" + displayName + '\'' +
-                ", isRequired=" + isRequired +
+                "key='" + key + '\'' +
                 ", type=" + type +
                 ", value='" + value + '\'' +
                 '}';

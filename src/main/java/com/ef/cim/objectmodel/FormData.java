@@ -1,25 +1,30 @@
 package com.ef.cim.objectmodel;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 import java.util.UUID;
+import org.bson.types.ObjectId;
 
 public class FormData implements Serializable {
-    private UUID id;
+    private ObjectId id;
     private Form form;
     private String filledBy;
     private Date createdOn;
+    private List<Attribute> attributes;
 
     public FormData() {
-        this.id = UUID.randomUUID();
+        this.id = new ObjectId();
         this.createdOn = new Date();
+        this.attributes = new ArrayList<>();
     }
 
-    public UUID getId() {
+    public ObjectId getId() {
         return id;
     }
 
-    public void setId(UUID id) {
+    public void setId(ObjectId id) {
         this.id = id;
     }
 
@@ -47,6 +52,14 @@ public class FormData implements Serializable {
         this.createdOn = createdOn;
     }
 
+    public List<Attribute> getAttributes() {
+        return attributes;
+    }
+
+    public void setAttributes(List<Attribute> attributes) {
+        this.attributes = attributes;
+    }
+
     @Override
     public String toString() {
         return "FormData{" +
@@ -54,6 +67,7 @@ public class FormData implements Serializable {
                 ", form=" + form +
                 ", filledBy='" + filledBy + '\'' +
                 ", createdOn=" + createdOn +
+                ", attributes=" + attributes +
                 '}';
     }
 }

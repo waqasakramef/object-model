@@ -2,38 +2,49 @@ package com.ef.cim.objectmodel;
 
 import java.io.Serializable;
 import java.util.List;
-import java.util.UUID;
+import org.bson.types.ObjectId;
+import org.springframework.data.mongodb.core.mapping.Document;
 
+@Document(collection = "forms")
 public class Form implements Serializable {
-    private UUID id;
-    private String name;
-    private List<Attribute> attributes;
+    private ObjectId id;
+    private String formTitle;
+    private String formDescription;
+    private List<AttributeSchema> attributes;
 
     public Form() {
-        this.id = UUID.randomUUID();
+        //this.id = UUID.randomUUID();
     }
 
-    public UUID getId() {
+    public ObjectId getId() {
         return id;
     }
 
-    public void setId(UUID id) {
+    public void setId(ObjectId id) {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getFormTitle() {
+        return formTitle;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setFormTitle(String formTitle) {
+        this.formTitle = formTitle;
     }
 
-    public List<Attribute> getAttributes() {
+    public String getFormDescription() {
+        return formDescription;
+    }
+
+    public void setFormDescription(String formDescription) {
+        this.formDescription = formDescription;
+    }
+
+    public List<AttributeSchema> getAttributes() {
         return attributes;
     }
 
-    public void setAttributes(List<Attribute> attributes) {
+    public void setAttributes(List<AttributeSchema> attributes) {
         this.attributes = attributes;
     }
 
@@ -41,7 +52,8 @@ public class Form implements Serializable {
     public String toString() {
         return "Form{" +
                 "id=" + id +
-                ", name='" + name + '\'' +
+                ", formTitle='" + formTitle + '\'' +
+                ", formDescription='" + formDescription + '\'' +
                 ", attributes=" + attributes +
                 '}';
     }

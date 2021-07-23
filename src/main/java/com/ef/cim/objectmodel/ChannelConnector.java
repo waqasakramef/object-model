@@ -15,6 +15,8 @@ public class ChannelConnector implements Serializable {
     @NotBlank
     private String channelConnectorName;
     private URL channelWebhook;
+    private Interface channelConnectorInterface;
+    private String interfaceAddress;
     @DBRef
     private ChannelType channelType;
 //    private UndefinedObject channelLogo;
@@ -23,6 +25,7 @@ public class ChannelConnector implements Serializable {
 
     public ChannelConnector() {
         this.id = UUID.randomUUID();
+        channelConnectorInterface = Interface.REST;
     }
 
     public UUID getId() {
@@ -80,9 +83,24 @@ public class ChannelConnector implements Serializable {
 
     public void setId(UUID id) { this.id = id; }
 
+    public Interface getChannelConnectorInterface() {
+        return channelConnectorInterface;
+    }
+
+    public void setChannelConnectorInterface(Interface channelConnectorInterface) {
+        this.channelConnectorInterface = channelConnectorInterface;
+    }
+
+    public String getInterfaceAddress() {
+        return interfaceAddress;
+    }
+
+    public void setInterfaceAddress(String interfaceAddress) {
+        this.interfaceAddress = interfaceAddress;
+    }
 
     /***
-     * String Representation of ChannelConnector
+     * String Representation of ChannelConnector.
      * @return String
      */
     @Override
@@ -91,8 +109,10 @@ public class ChannelConnector implements Serializable {
                 "id=" + id +
                 ", channelConnectorName='" + channelConnectorName + '\'' +
                 ", channelWebhook=" + channelWebhook +
-                ", type=" + channelType +
-                ", formData=" + channelConnectorData +
+                ", channelConnectorInterface=" + channelConnectorInterface +
+                ", interfaceAddress='" + interfaceAddress + '\'' +
+                ", channelType=" + channelType +
+                ", channelConnectorData=" + channelConnectorData +
                 ", tenant=" + tenant +
                 '}';
     }
