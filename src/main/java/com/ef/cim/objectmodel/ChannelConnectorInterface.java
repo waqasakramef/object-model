@@ -1,6 +1,6 @@
 package com.ef.cim.objectmodel;
 
-public enum Interface {
+public enum ChannelConnectorInterface {
     JMS,
     REST
 }

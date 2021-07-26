@@ -1,5 +1,6 @@
 package com.ef.cim.objectmodel;
 
+import com.ef.cim.objectmodel.annotations.cascadesave.CascadeSave;
 import java.io.Serializable;
 import java.util.UUID;
 import javax.validation.Valid;
@@ -25,6 +26,7 @@ public class Channel implements Serializable {
     @Valid
     private ChannelConfig channelConfig;
     @DBRef
+    @CascadeSave
     private ChannelConnector channelConnector;
 
     /**

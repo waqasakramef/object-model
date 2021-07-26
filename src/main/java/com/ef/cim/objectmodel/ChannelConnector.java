@@ -1,7 +1,7 @@
 package com.ef.cim.objectmodel;
 
+import com.ef.cim.objectmodel.annotations.cascadesave.CascadeSave;
 import java.io.Serializable;
-import java.net.URL;
 import java.util.UUID;
 import javax.validation.constraints.NotBlank;
 import org.springframework.data.annotation.Id;
@@ -14,10 +14,10 @@ public class ChannelConnector implements Serializable {
     private UUID id;
     @NotBlank
     private String channelConnectorName;
-    private URL channelWebhook;
-    private Interface channelConnectorInterface;
+    private ChannelConnectorInterface channelConnectorInterface;
     private String interfaceAddress;
     @DBRef
+    @CascadeSave
     private ChannelType channelType;
 //    private UndefinedObject channelLogo;
     private FormData channelConnectorData;
@@ -25,7 +25,7 @@ public class ChannelConnector implements Serializable {
 
     public ChannelConnector() {
         this.id = UUID.randomUUID();
-        channelConnectorInterface = Interface.REST;
+        channelConnectorInterface = ChannelConnectorInterface.REST;
     }
 
     public UUID getId() {
@@ -38,14 +38,6 @@ public class ChannelConnector implements Serializable {
 
     public void setChannelConnectorName(String channelConnectorName) {
         this.channelConnectorName = channelConnectorName;
-    }
-
-    public URL getChannelWebhook() {
-        return channelWebhook;
-    }
-
-    public void setChannelWebhook(URL channelWebhook) {
-        this.channelWebhook = channelWebhook;
     }
 
     public ChannelType getChannelType() {
@@ -83,11 +75,11 @@ public class ChannelConnector implements Serializable {
 
     public void setId(UUID id) { this.id = id; }
 
-    public Interface getChannelConnectorInterface() {
+    public ChannelConnectorInterface getChannelConnectorInterface() {
         return channelConnectorInterface;
     }
 
-    public void setChannelConnectorInterface(Interface channelConnectorInterface) {
+    public void setChannelConnectorInterface(ChannelConnectorInterface channelConnectorInterface) {
         this.channelConnectorInterface = channelConnectorInterface;
     }
 
@@ -108,7 +100,6 @@ public class ChannelConnector implements Serializable {
         return "ChannelConnector{" +
                 "id=" + id +
                 ", channelConnectorName='" + channelConnectorName + '\'' +
-                ", channelWebhook=" + channelWebhook +
                 ", channelConnectorInterface=" + channelConnectorInterface +
                 ", interfaceAddress='" + interfaceAddress + '\'' +
                 ", channelType=" + channelType +

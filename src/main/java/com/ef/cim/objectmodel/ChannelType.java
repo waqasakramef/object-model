@@ -1,5 +1,6 @@
 package com.ef.cim.objectmodel;
 
+import com.ef.cim.objectmodel.annotations.cascadesave.CascadeSave;
 import java.io.Serializable;
 import java.util.UUID;
 import javax.validation.constraints.NotBlank;
@@ -20,6 +21,7 @@ public class ChannelType implements Serializable {
     private UndefinedObject channelLogo;
     private boolean isInteractive;
     @DBRef
+    @CascadeSave
     private Form channelConfigSchema;
     private UUID mediaRoutingDomain;
 

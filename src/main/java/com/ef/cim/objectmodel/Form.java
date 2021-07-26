@@ -3,10 +3,12 @@ package com.ef.cim.objectmodel;
 import java.io.Serializable;
 import java.util.List;
 import org.bson.types.ObjectId;
+import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Document(collection = "forms")
 public class Form implements Serializable {
+    @Id
     private ObjectId id;
     private String formTitle;
     private String formDescription;
