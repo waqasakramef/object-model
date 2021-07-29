@@ -17,7 +17,6 @@ public class ChannelConnector implements Serializable {
     private ChannelConnectorInterface channelConnectorInterface;
     private String interfaceAddress;
     @DBRef
-    @CascadeSave
     private ChannelType channelType;
 //    private UndefinedObject channelLogo;
     private FormData channelConnectorData;

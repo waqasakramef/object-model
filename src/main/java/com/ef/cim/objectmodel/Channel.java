@@ -26,7 +26,6 @@ public class Channel implements Serializable {
     @Valid
     private ChannelConfig channelConfig;
     @DBRef
-    @CascadeSave
     private ChannelConnector channelConnector;
 
     /**

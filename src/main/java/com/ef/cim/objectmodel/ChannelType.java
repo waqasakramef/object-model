@@ -21,7 +21,6 @@ public class ChannelType implements Serializable {
     private UndefinedObject channelLogo;
     private boolean isInteractive;
     @DBRef
-    @CascadeSave
     private Form channelConfigSchema;
     private UUID mediaRoutingDomain;
 
