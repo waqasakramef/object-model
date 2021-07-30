@@ -8,31 +8,31 @@ import java.util.UUID;
 import org.bson.types.ObjectId;
 
 public class FormData implements Serializable {
-    private ObjectId id;
-    private Form form;
+    private UUID id;
+    private ObjectId form;
     private String filledBy;
     private Date createdOn;
     private List<Attribute> attributes;
 
     public FormData() {
-        this.id = new ObjectId();
+        this.id = UUID.randomUUID();
         this.createdOn = new Date();
         this.attributes = new ArrayList<>();
     }
 
-    public ObjectId getId() {
+    public UUID getId() {
         return id;
     }
 
-    public void setId(ObjectId id) {
+    public void setId(UUID id) {
         this.id = id;
     }
 
-    public Form getForm() {
+    public ObjectId getForm() {
         return form;
     }
 
-    public void setForm(Form form) {
+    public void setForm(ObjectId form) {
         this.form = form;
     }
 
