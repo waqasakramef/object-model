@@ -1,5 +1,7 @@
 package com.ef.cim.objectmodel;
 
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import com.fasterxml.jackson.databind.ser.std.ToStringSerializer;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
@@ -9,6 +11,7 @@ import org.bson.types.ObjectId;
 
 public class FormData implements Serializable {
     private UUID id;
+    @JsonSerialize(using= ToStringSerializer.class)
     private ObjectId form;
     private String filledBy;
     private Date createdOn;
