@@ -1,5 +1,6 @@
 package com.ef.cim.objectmodel;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -11,11 +12,11 @@ public class CategoryOptions {
         categories = new ArrayList<>();
     }
 
-    public Boolean getMultipleChoice() {
+    public Boolean getIsMultipleChoice() {
         return isMultipleChoice;
     }
 
-    public void setMultipleChoice(Boolean multipleChoice) {
+    public void setIsMultipleChoice(Boolean multipleChoice) {
         isMultipleChoice = multipleChoice;
     }
 

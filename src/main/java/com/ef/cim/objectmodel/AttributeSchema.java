@@ -1,5 +1,6 @@
 package com.ef.cim.objectmodel;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import java.io.Serializable;
 
 public class AttributeSchema implements Serializable {
@@ -30,11 +31,11 @@ public class AttributeSchema implements Serializable {
         this.categoryOptions = categoryOptions;
     }
 
-    public Boolean getRequired() {
+    public Boolean getIsRequired() {
         return isRequired;
     }
 
-    public void setRequired(Boolean required) {
+    public void setIsRequired(Boolean required) {
         isRequired = required;
     }
 
