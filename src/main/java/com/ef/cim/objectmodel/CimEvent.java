@@ -11,13 +11,20 @@ public class CimEvent implements Serializable {
     private CimEventName name;
     private CimEventType type;
     private Timestamp timestamp;
-
-
     private Object data;
 
     public CimEvent() {
         this.id = UUID.randomUUID();
     }
+
+    public CimEvent(Object data, CimEventName name, CimEventType type) {
+        this.id = UUID.randomUUID();
+        this.data = data;
+        this.name = name;
+        this.type = type;
+        this.timestamp = new Timestamp(System.currentTimeMillis());
+    }
+
     // Getters
     public UUID getId() { return id; }
 
