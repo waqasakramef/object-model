@@ -5,7 +5,7 @@ public enum MessageType {
     NOTIFICATIONS,
     PLAIN,
     BUTTON,
-    CAROUSAL,
+    CAROUSEL,
     LOCATION,
     CONTACT,
     MULTIMEDIA,
@@ -13,5 +13,8 @@ public enum MessageType {
     AUDIO,
     IMAGE,
     FILE,
-    DELIVERYNOTIFICATION
+    DELIVERYNOTIFICATION,
+    CUSTOM,
+    STICKER,
+    URL
 }

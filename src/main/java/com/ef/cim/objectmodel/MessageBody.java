@@ -3,8 +3,6 @@ package com.ef.cim.objectmodel;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonSubTypes.Type;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
-import com.fasterxml.jackson.annotation.JsonTypeInfo.As;
-import com.fasterxml.jackson.annotation.JsonTypeInfo.Id;
 import java.io.Serializable;
 import javax.validation.constraints.NotNull;
 
@@ -22,9 +20,10 @@ import javax.validation.constraints.NotNull;
         @Type(value = FileMessage.class, name = "FILE"),
         @Type(value = ContactMessage.class, name = "CONTACT"),
         @Type(value = LocationMessage.class, name = "LOCATION"),
-        @Type(value = CarousalMessage.class, name = "CAROUSAL"),
+        @Type(value = CarouselMessage.class, name = "CAROUSEL"),
         @Type(value = ButtonMessage.class, name = "BUTTON"),
-        @Type(value = MessageBody.class, name = "PLAIN")
+        @Type(value = MessageBody.class, name = "PLAIN"),
+        @Type(value = CustomMessage.class, name = "CUSTOM")
 })
 public class MessageBody implements Serializable {
     @NotNull
@@ -38,7 +37,7 @@ public class MessageBody implements Serializable {
     /**
      * Default Constructor
      *
-     * @param type
+     * @param type value of MessageType
      */
     protected MessageBody(MessageType type) {
         this.type = type;

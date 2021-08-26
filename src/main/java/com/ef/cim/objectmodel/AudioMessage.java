@@ -1,16 +1,14 @@
 package com.ef.cim.objectmodel;
 
-import java.net.URL;
-
 public class AudioMessage extends MultimediaMessage{
     private long size;
 
     //Default Constructor
-    public AudioMessage(URL media) {
+    public AudioMessage(String media) {
         super(MessageType.AUDIO, media);
     }
 
-    public AudioMessage(URL media,long size) {
+    public AudioMessage(String media,long size) {
         super(MessageType.AUDIO,media);
         this.size = size;
     }

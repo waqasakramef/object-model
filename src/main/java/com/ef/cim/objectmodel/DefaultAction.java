@@ -1,13 +1,17 @@
 package com.ef.cim.objectmodel;
 
-import java.net.URL;
+public class DefaultAction {
 
-public class CarouselDefaultAction {
     private String type;
-    private URL url;
+    private String url;
 
     // Default Constructor
-    public CarouselDefaultAction() {
+    public DefaultAction() {
+    }
+
+    public DefaultAction(String type, String url) {
+        this.type = type;
+        this.url = url;
     }
 
     // Getters
@@ -20,19 +24,19 @@ public class CarouselDefaultAction {
         this.type = type;
     }
 
-    public URL getUrl() {
+    public String getUrl() {
         return this.url;
     }
 
-    public void setUrl(URL url) {
+    public void setUrl(String url) {
         this.url = url;
     }
 
     @Override
     public String toString() {
-        return "CarouselDefaultAction{" +
+        return "DefaultAction{" +
                 "type='" + type + '\'' +
-                ", url=" + url +
+                ", url='" + url + '\'' +
                 '}';
     }
 }

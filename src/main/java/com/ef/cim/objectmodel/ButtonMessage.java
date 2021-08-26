@@ -4,18 +4,23 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ButtonMessage extends StructuredMessage {
+
     private List<Button> buttons;
-    private String text;
-    private boolean composerInputDisabled;
+    private ButtonMessageType buttonMessageType;
 
     /**
      * Default Constructor Initializes an empty buttons list.
      */
-    public ButtonMessage() {
+    public ButtonMessage(ButtonMessageType buttonMessageType) {
         super(MessageType.BUTTON);
         buttons = new ArrayList<>();
-        text = "";
-        composerInputDisabled = true;
+        this.buttonMessageType = buttonMessageType;
+    }
+
+    public ButtonMessage(List<Button> buttons, ButtonMessageType buttonMessageType) {
+        super(MessageType.BUTTON);
+        this.buttons = buttons;
+        this.buttonMessageType = buttonMessageType;
     }
 
     /**
@@ -71,50 +76,28 @@ public class ButtonMessage extends StructuredMessage {
         }
     }
 
-    /**
-     * Return the text of button message
-     *
-     * @return {@code String}
-     */
-    public String getText() {
-        return this.text;
+    public ButtonMessageType getButtonMessageType() {
+        return this.buttonMessageType;
+    }
+
+
+    public void setButtonMessageType(ButtonMessageType buttonMessageType) {
+        this.buttonMessageType = buttonMessageType;
     }
 
     /**
-     * set the text of button message
-     *
-     * @param text, object of type {@code String}
-     */
-    public void setText(String text) {
-        this.text = text;
-    }
-
-    /**
-     * Return the composerInputDisabled of button message
-     *
-     * @return {@code String}
-     */
-    public boolean getComposerInputDisabled() {
-        return this.composerInputDisabled;
-    }
-
-    /**
-     * set the composerInputDisabled of button message
-     *
-     * @param composerInputDisabled of type {@code boolean}
-     */
-    public void setComposerInputDisabled(boolean composerInputDisabled) {
-        this.composerInputDisabled = composerInputDisabled;
-    }
-
-    /**
-     * Converts the {@code ButtonMessage} object to string
+     * Converts the {@code ButtonMessage} object to string.
      *
      * @return {@code String}
      */
     @Override
     public String toString() {
-        return "ButtonMessage{" + "text=" + text + ", buttons=" + buttons +
-                ", composerInputDisabled='" + composerInputDisabled + '\'' + '}';
+        return "ButtonMessage{" +
+                "buttons=" + buttons +
+                ", buttonMessageType=" + buttonMessageType +
+                ", type=" + type +
+                ", markdownText='" + markdownText + '\'' +
+                ", additionalDetails=" + additionalDetails +
+                '}';
     }
 }

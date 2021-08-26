@@ -1,30 +1,39 @@
 package com.ef.cim.objectmodel;
 
-import java.net.URL;
-
 public class MultimediaMessage extends StructuredMessage {
-    protected URL media;
+
+    protected String caption;
+    protected Attachment attachment;
 
     // Default Constructor
-    public MultimediaMessage(URL media) {
+    public MultimediaMessage(String caption, Attachment attachment) {
         super(MessageType.MULTIMEDIA);
-        this.media = media;
+        this.caption = caption;
+        this.attachment = attachment;
     }
 
-    // Constructor 1
-    protected MultimediaMessage(MessageType type, URL media) {
+    // parameterized constructor
+    protected MultimediaMessage(MessageType type, String caption, Attachment attachment) {
         super(type);
-        this.media = media;
+        this.caption = caption;
+        this.attachment = attachment;
     }
 
-    // Getters
-    public URL getMedia() {
-        return this.media;
+
+    public String getCaption() {
+        return this.caption;
     }
 
-    // Setters
-    public void setMedia(URL media) {
-        this.media = media;
+    public void setCaption(String caption) {
+        this.caption = caption;
+    }
+
+    public Attachment getAttachment() {
+        return attachment;
+    }
+
+    public void setAttachment(Attachment attachment) {
+        this.attachment = attachment;
     }
 
     @Override
@@ -32,7 +41,9 @@ public class MultimediaMessage extends StructuredMessage {
         return "MultimediaMessage{" +
                 "type=" + type +
                 ", markdownText='" + markdownText + '\'' +
-                ", media=" + media +
+                ", caption='" + caption + '\'' +
+                ", attachment=" + attachment +
+                ", additionalDetails=" + additionalDetails +
                 '}';
     }
 }

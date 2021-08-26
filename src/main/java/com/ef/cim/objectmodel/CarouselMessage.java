@@ -6,54 +6,25 @@ import java.util.List;
 /**
  * A {@code CarousalMessage} object represents the body of a message that is of CAROUSAL type
  */
-public class CarousalMessage extends StructuredMessage {
-    private int maxWidth;
-    private int maxHeight;
-    private List<CarousalElement> elements;
+public class CarouselMessage extends StructuredMessage {
+
+    private CarouselMessageType carouselMessageType;
+    private List<CarouselElement> elements;
 
     /**
-     * Default Constructor, Sets the message type to CAROUSAL Initialize the list of carousal elements
-     * as an empty list
+     * Default Constructor, Sets the message type to CAROUSAL Initialize the list of carousal elements as an empty list
      */
-    public CarousalMessage() {
-        super(MessageType.CAROUSAL);
-        this.elements = new ArrayList<CarousalElement>();
+    public CarouselMessage(CarouselMessageType carouselMessageType) {
+        super(MessageType.CAROUSEL);
+        this.elements = new ArrayList<>();
+        this.carouselMessageType = carouselMessageType;
     }
 
-    /**
-     * Returns the max width of the carousal message
-     *
-     * @return {@code int}
-     */
-    public int getMaxWidth() {
-        return this.maxWidth;
-    }
-
-    /**
-     * Sets the max width of the carousal message
-     *
-     * @param maxWidth, of type {@code int}
-     */
-    public void setMaxWidth(int maxWidth) {
-        this.maxWidth = maxWidth;
-    }
-
-    /**
-     * Returns the max height of the carousal message
-     *
-     * @return {@code int}
-     */
-    public int getMaxHeight() {
-        return this.maxHeight;
-    }
-
-    /**
-     * Sets the max width of the carousal message
-     *
-     * @param maxHeight, of type {@code int}
-     */
-    public void setMaxHeight(int maxHeight) {
-        this.maxHeight = maxHeight;
+    public CarouselMessage(CarouselMessageType carouselMessageType,
+            List<CarouselElement> elements) {
+        super(MessageType.CAROUSEL);
+        this.carouselMessageType = carouselMessageType;
+        this.elements = elements;
     }
 
     /**
@@ -61,7 +32,7 @@ public class CarousalMessage extends StructuredMessage {
      *
      * @return {@code List<CarousalElement>}
      */
-    public List<CarousalElement> getElements() {
+    public List<CarouselElement> getElements() {
         return this.elements;
     }
 
@@ -70,7 +41,7 @@ public class CarousalMessage extends StructuredMessage {
      *
      * @param elements, object of type {@code List<CarousalElement>}
      */
-    public void setElements(List<CarousalElement> elements) {
+    public void setElements(List<CarouselElement> elements) {
         this.elements = elements;
     }
 
@@ -79,9 +50,9 @@ public class CarousalMessage extends StructuredMessage {
      *
      * @param element, object of type {@code CarousalElement}
      */
-    public void addElement(CarousalElement element) {
+    public void addElement(CarouselElement element) {
         if (this.elements == null) {
-            this.elements = new ArrayList<CarousalElement>();
+            this.elements = new ArrayList<CarouselElement>();
         }
         this.elements.add(element);
     }
@@ -91,7 +62,7 @@ public class CarousalMessage extends StructuredMessage {
      *
      * @param element, object of type {@code CarousalElement}
      */
-    public void removeElement(CarousalElement element) {
+    public void removeElement(CarouselElement element) {
         if (this.elements != null) {
             this.elements.remove(element);
         }
@@ -108,14 +79,22 @@ public class CarousalMessage extends StructuredMessage {
         }
     }
 
+    public CarouselMessageType getCarouselMessageType() {
+        return carouselMessageType;
+    }
+
+    public void setCarouselMessageType(CarouselMessageType carouselMessageType) {
+        this.carouselMessageType = carouselMessageType;
+    }
+
     @Override
     public String toString() {
-        return "CarousalMessage{" +
-                "maxWidth=" + maxWidth +
-                ", maxHeight=" + maxHeight +
+        return "CarouselMessage{" +
+                "carouselMessageType=" + carouselMessageType +
                 ", elements=" + elements +
                 ", type=" + type +
                 ", markdownText='" + markdownText + '\'' +
+                ", additionalDetails=" + additionalDetails +
                 '}';
     }
 }
