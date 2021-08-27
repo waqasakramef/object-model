@@ -16,5 +16,8 @@ public enum MessageType {
     DELIVERYNOTIFICATION,
     CUSTOM,
     STICKER,
-    URL
+    URL,
+    LIST,
+    RECEIPT,
+    TEMPLATE
 }

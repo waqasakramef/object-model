@@ -12,7 +12,7 @@ import javax.validation.constraints.NotNull;
         property = "type")
 @JsonSubTypes({
         @Type(value = DeliveryNotification.class, name = "DELIVERYNOTIFICATION"),
-        @Type(value = StructuredMessage.class, name = "StructuredMessage"),
+        @Type(value = CustomMessage.class, name = "CUSTOM"),
         @Type(value = MultimediaMessage.class, name = "MULTIMEDIA"),
         @Type(value = VideoMessage.class, name = "VIDEO"),
         @Type(value = ImageMessage.class, name = "IMAGE"),
@@ -23,7 +23,16 @@ import javax.validation.constraints.NotNull;
         @Type(value = CarouselMessage.class, name = "CAROUSEL"),
         @Type(value = ButtonMessage.class, name = "BUTTON"),
         @Type(value = MessageBody.class, name = "PLAIN"),
-        @Type(value = CustomMessage.class, name = "CUSTOM")
+        @Type(value = ListMessage.class, name = "LIST"),
+        @Type(value = UrlMessage.class, name = "URL"),
+        @Type(value = StickerMessage.class, name = "STICKER"),
+        @Type(value = ReceiptTemplateMessage.class, name = "RECEIPT"),
+        @Type(value = TemplateMessage.class, name = "TEMPLATE")
+
+
+
+
+
 })
 public class MessageBody implements Serializable {
     @NotNull

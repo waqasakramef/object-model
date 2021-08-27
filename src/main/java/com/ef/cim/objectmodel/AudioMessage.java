@@ -1,30 +1,20 @@
 package com.ef.cim.objectmodel;
 
 public class AudioMessage extends MultimediaMessage{
-    private long size;
 
     //Default Constructor
-    public AudioMessage(String media) {
-        super(MessageType.AUDIO, media);
-    }
-
-    public AudioMessage(String media,long size) {
-        super(MessageType.AUDIO,media);
-        this.size = size;
-    }
-
-    public long getSize() {
-        return size;
-    }
-
-    public void setSize(long size) {
-        this.size = size;
+    public AudioMessage(String caption, Attachment attachment) {
+        super(MessageType.AUDIO, caption, attachment);
     }
 
     @Override
     public String toString() {
         return "AudioMessage{" +
-                "size=" + size +
+                "type=" + type +
+                ", markdownText='" + markdownText + '\'' +
+                ", caption='" + caption + '\'' +
+                ", attachment=" + attachment +
+                ", additionalDetails=" + additionalDetails +
                 '}';
     }
 }
