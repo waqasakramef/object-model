@@ -11,12 +11,12 @@ public class StructuredMessage extends MessageBody {
         super(type);
     }
 
-    public JsonNode getAdditionalButtonDetails() {
+    public JsonNode getAdditionalDetails() {
         return additionalDetails;
     }
 
-    public void setAdditionalButtonDetails(JsonNode additionalButtonDetails) {
-        this.additionalDetails = additionalButtonDetails;
+    public void setAdditionalDetails(JsonNode additionalDetails) {
+        this.additionalDetails = additionalDetails;
     }
 
     @Override
