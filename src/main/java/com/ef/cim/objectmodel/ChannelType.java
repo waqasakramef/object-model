@@ -21,7 +21,7 @@ public class ChannelType implements Serializable {
     private boolean isInteractive;
     @DBRef
     private Form channelConfigSchema;
-    private UUID mediaRoutingDomain;
+    private String mediaRoutingDomain;
 
     /**
      * Default Constructor, Sets an immutable unique identifier for the channel type object. Sets the is channel type
@@ -99,11 +99,11 @@ public class ChannelType implements Serializable {
         this.channelConfigSchema = channelConfigSchema;
     }
 
-    public UUID getMediaRoutingDomain() {
+    public String getMediaRoutingDomain() {
         return mediaRoutingDomain;
     }
 
-    public void setMediaRoutingDomain(UUID mediaRoutingDomain) {
+    public void setMediaRoutingDomain(String mediaRoutingDomain) {
         this.mediaRoutingDomain = mediaRoutingDomain;
     }
 
