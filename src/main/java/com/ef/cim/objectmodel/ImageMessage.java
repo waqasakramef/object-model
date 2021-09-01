@@ -4,7 +4,7 @@ public class ImageMessage extends MultimediaMessage {
 
     // Constructor
     public ImageMessage(String caption, Attachment attachment) {
-        super(MessageType.ACTIVITY, caption, attachment);
+        super(MessageType.IMAGE, caption, attachment);
     }
 
     @Override
