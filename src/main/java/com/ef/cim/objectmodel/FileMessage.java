@@ -1,9 +1,11 @@
 package com.ef.cim.objectmodel;
 
+import javax.validation.Valid;
+
 public class FileMessage extends MultimediaMessage {
 
     //Constructor
-    public FileMessage(String caption, Attachment attachment) {
+    public FileMessage(String caption, @Valid Attachment attachment) {
         super(MessageType.FILE, caption, attachment);
     }
 

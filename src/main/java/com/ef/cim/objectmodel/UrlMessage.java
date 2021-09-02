@@ -1,11 +1,13 @@
 package com.ef.cim.objectmodel;
 
+import javax.validation.constraints.NotBlank;
+
 public class UrlMessage extends StructuredMessage {
 
     private String mediaUrl;
 
     //default constructor
-    public UrlMessage(String mediaUrl) {
+    public UrlMessage(@NotBlank String mediaUrl) {
         super(MessageType.URL);
         this.mediaUrl = mediaUrl;
     }

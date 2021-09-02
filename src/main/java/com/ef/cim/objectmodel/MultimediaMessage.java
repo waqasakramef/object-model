@@ -1,8 +1,11 @@
 package com.ef.cim.objectmodel;
 
+import javax.validation.Valid;
+
 public class MultimediaMessage extends StructuredMessage {
 
     protected String caption;
+    @Valid
     protected Attachment attachment;
 
     // Default Constructor

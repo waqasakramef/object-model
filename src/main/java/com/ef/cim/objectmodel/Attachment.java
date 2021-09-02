@@ -1,6 +1,9 @@
 package com.ef.cim.objectmodel;
 
+import javax.validation.constraints.NotBlank;
+
 public class Attachment {
+    @NotBlank
     private String mediaUrl;
     private String thumbnail;
     private long size;
