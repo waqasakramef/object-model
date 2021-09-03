@@ -4,12 +4,17 @@ import javax.validation.constraints.NotBlank;
 
 public class UrlMessage extends StructuredMessage {
 
+    @NotBlank
     private String mediaUrl;
 
     //default constructor
-    public UrlMessage(@NotBlank String mediaUrl) {
+    public UrlMessage(String mediaUrl) {
         super(MessageType.URL);
         this.mediaUrl = mediaUrl;
+    }
+
+    public UrlMessage() {
+        super(MessageType.URL);
     }
 
     public String getMediaUrl() {
