@@ -10,3 +10,15 @@ Version 1.4.8:
 -- id in RoutingAttribute changed to String from UUID
 
 ===============================================================
+
+Version 1.5.0:
+
+ -- Added PullModeList class
+ 
+ -- Added PullModeListEvent enum
+ 
+ -- ChannelSession object added in customer topic
+ 
+ -- `CREATED`  and `INACTIVE` states added inTopicState enum  
+ 
+

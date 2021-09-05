@@ -10,6 +10,7 @@ public class CustomerTopic implements Serializable {
     private Customer customer;
     private List<TopicParticipant> participants;
     private TopicState state;
+    private ChannelSession channelSession;
 
     // Default Constructor
     public CustomerTopic() {
@@ -50,29 +51,33 @@ public class CustomerTopic implements Serializable {
         this.participants.add(participant);
     }
 
-
     public void removeParticipant(TopicParticipant participant) {
         if (this.participants != null) {
             this.participants.remove(participant);
         }
     }
-
     public void removeParticipant(int index) {
         if (this.participants != null) {
             this.participants.remove(index);
         }
     }
 
-    /***
-     * String Representation of CustomerTopic
-     * @return String
-     */
+    public ChannelSession getChannelSession() {
+        return channelSession;
+    }
+
+    public void setChannelSession(ChannelSession channelSession) {
+        this.channelSession = channelSession;
+    }
+
     @Override
     public String toString() {
         return "CustomerTopic{" +
                 "id=" + id +
+                ", customer=" + customer +
                 ", participants=" + participants +
                 ", state=" + state +
+                ", channelSession=" + channelSession +
                 '}';
     }
 }
