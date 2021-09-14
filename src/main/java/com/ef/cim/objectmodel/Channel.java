@@ -27,6 +27,7 @@ public class Channel implements Serializable {
     private ChannelConfig channelConfig;
     @DBRef
     private ChannelConnector channelConnector;
+    private FormData additionalConfig;
 
     /**
      * Default Constructor, Sets an immutable Unique Identifying Number for the channel Initializes all the instance
@@ -39,6 +40,7 @@ public class Channel implements Serializable {
         this.tenant = new Tenant();
         this.channelConfig = new ChannelConfig();
         this.channelConnector = new ChannelConnector();
+        this.additionalConfig = new FormData();
     }
 
     public Channel(String channelName, String serviceIdentifier, ChannelConfig channelConfig,
@@ -185,6 +187,22 @@ public class Channel implements Serializable {
         this.tenant = tenant;
     }
 
+    /**
+     * Gets additionalConfig
+     * @return FormData
+     */
+    public FormData getAdditionalConfig() {
+        return additionalConfig;
+    }
+
+    /**
+     * Sets additionalConfig
+     * @param additionalConfig value of additionalConfig
+     */
+    public void setAdditionalConfig(FormData additionalConfig) {
+        this.additionalConfig = additionalConfig;
+    }
+
     /***
      * String Representation of Channel
      * @return String
@@ -195,9 +213,10 @@ public class Channel implements Serializable {
                 "id=" + id +
                 ", channelName='" + channelName + '\'' +
                 ", serviceIdentifier='" + serviceIdentifier + '\'' +
+                ", tenant=" + tenant +
                 ", channelConfig=" + channelConfig +
-//                ", channelConnector=" + channelConnector +
+                ", channelConnector=" + channelConnector +
+                ", additionalConfig=" + additionalConfig +
                 '}';
     }
-
 }

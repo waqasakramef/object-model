@@ -22,3 +22,12 @@ Version 1.5.0:
  -- `CREATED`  and `INACTIVE` states added inTopicState enum  
  
 
+===================================================================
+
+Version 1.5.1:
+
+
+ -- renamed 'channelConnectorData' to 'connectorConfig' in ChannelConnector Class
+
+ -- added new attribute 'additionalConfig' in Channel Class
+

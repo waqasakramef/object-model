@@ -1,6 +1,5 @@
 package com.ef.cim.objectmodel;
 
-import com.ef.cim.objectmodel.annotations.cascadesave.CascadeSave;
 import java.io.Serializable;
 import java.util.UUID;
 import javax.validation.constraints.NotBlank;
@@ -19,7 +18,7 @@ public class ChannelConnector implements Serializable {
     @DBRef
     private ChannelType channelType;
 //    private UndefinedObject channelLogo;
-    private FormData channelConnectorData;
+    private FormData connectorConfig;
     private Tenant tenant;
 
     public ChannelConnector() {
@@ -56,12 +55,12 @@ public class ChannelConnector implements Serializable {
 //    }
 
 
-    public FormData getChannelConnectorData() {
-        return channelConnectorData;
+    public FormData getConnectorConfig() {
+        return connectorConfig;
     }
 
-    public void setChannelConnectorData(FormData channelConnectorData) {
-        this.channelConnectorData = channelConnectorData;
+    public void setConnectorConfig(FormData connectorConfig) {
+        this.connectorConfig = connectorConfig;
     }
 
     public Tenant getTenant() {
@@ -102,7 +101,7 @@ public class ChannelConnector implements Serializable {
                 ", channelConnectorInterface=" + channelConnectorInterface +
                 ", interfaceAddress='" + interfaceAddress + '\'' +
                 ", channelType=" + channelType +
-                ", channelConnectorData=" + channelConnectorData +
+                ", connectorConfig=" + connectorConfig +
                 ", tenant=" + tenant +
                 '}';
     }
