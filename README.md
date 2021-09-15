@@ -31,3 +31,6 @@ Version 1.5.1:
 
  -- added new attribute 'additionalConfig' in Channel Class
 
+ -- updated 'channelConfigSchema' Type to ObjectId and removed @DBRef annotation
+
+ -- corrected FormData attribute name from 'form' to 'formId'

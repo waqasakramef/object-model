@@ -12,7 +12,7 @@ import org.bson.types.ObjectId;
 public class FormData implements Serializable {
     private UUID id;
     @JsonSerialize(using= ToStringSerializer.class)
-    private ObjectId form;
+    private ObjectId formId;
     private String filledBy;
     private Date createdOn;
     private List<Attribute> attributes;
@@ -31,12 +31,12 @@ public class FormData implements Serializable {
         this.id = id;
     }
 
-    public ObjectId getForm() {
-        return form;
+    public ObjectId getFormId() {
+        return formId;
     }
 
-    public void setForm(ObjectId form) {
-        this.form = form;
+    public void setFormId(ObjectId formId) {
+        this.formId = formId;
     }
 
     public String getFilledBy() {
@@ -67,7 +67,7 @@ public class FormData implements Serializable {
     public String toString() {
         return "FormData{" +
                 "id=" + id +
-                ", form=" + form +
+                ", formId=" + formId +
                 ", filledBy='" + filledBy + '\'' +
                 ", createdOn=" + createdOn +
                 ", attributes=" + attributes +
