@@ -41,4 +41,6 @@ Version 1.5.1:
 Version 1.5.2
 
 
- -- 
+ -- Updated FormData 'id' type to ObjectId
+ 
+ -- Updated FormData Constructor 
