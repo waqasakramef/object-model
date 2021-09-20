@@ -34,3 +34,11 @@ Version 1.5.1:
  -- updated 'channelConfigSchema' Type to ObjectId and removed @DBRef annotation
 
  -- corrected FormData attribute name from 'form' to 'formId'
+
+
+===================================================================
+
+Version 1.5.2
+
+
+ -- 

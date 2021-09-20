@@ -3,31 +3,29 @@ package com.ef.cim.objectmodel;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import com.fasterxml.jackson.databind.ser.std.ToStringSerializer;
 import java.io.Serializable;
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-import java.util.UUID;
 import org.bson.types.ObjectId;
 
 public class FormData implements Serializable {
-    private UUID id;
-    @JsonSerialize(using= ToStringSerializer.class)
+
+    @JsonSerialize(using = ToStringSerializer.class)
+    private ObjectId id;
+    @JsonSerialize(using = ToStringSerializer.class)
     private ObjectId formId;
     private String filledBy;
     private Date createdOn;
     private List<Attribute> attributes;
 
     public FormData() {
-        this.id = UUID.randomUUID();
-        this.createdOn = new Date();
-        this.attributes = new ArrayList<>();
+        this.id = new ObjectId();
     }
 
-    public UUID getId() {
+    public ObjectId getId() {
         return id;
     }
 
-    public void setId(UUID id) {
+    public void setId(ObjectId id) {
         this.id = id;
     }
 

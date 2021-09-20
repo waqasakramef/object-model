@@ -36,21 +36,21 @@ public class Channel implements Serializable {
     public Channel() {
         this.id = UUID.randomUUID();
         //  this.type = new ChannelType();
-        this.serviceIdentifier = "";
         this.tenant = new Tenant();
         this.channelConfig = new ChannelConfig();
         this.channelConnector = new ChannelConnector();
-        this.additionalConfig = new FormData();
+//        this.additionalConfig = new FormData();
     }
 
     public Channel(String channelName, String serviceIdentifier, ChannelConfig channelConfig,
-            ChannelConnector channelConnector, Tenant tenant) {
+            ChannelConnector channelConnector, Tenant tenant, FormData additionalConfig) {
         this.id = UUID.randomUUID();
         this.channelName = channelName;
         this.serviceIdentifier = serviceIdentifier;
         this.channelConfig = channelConfig;
         this.channelConnector = channelConnector;
         this.tenant = tenant;
+        this.additionalConfig = additionalConfig;
     }
 
     /**
