@@ -1,12 +1,10 @@
 package com.ef.cim.objectmodel;
 
-import com.fasterxml.jackson.databind.annotation.JsonSerialize;
-import com.fasterxml.jackson.databind.ser.std.ToStringSerializer;
 import java.io.Serializable;
 import java.util.UUID;
 import javax.validation.constraints.NotBlank;
-import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 /**
@@ -17,12 +15,11 @@ public class ChannelType implements Serializable {
 
     @Id
     private UUID id;
+    @Indexed(unique = true)
     @NotBlank
     private String typeName;
     private String channelLogo;
     private boolean isInteractive;
-    @JsonSerialize(using= ToStringSerializer.class)
-    private ObjectId channelConfigSchema;
     private String mediaRoutingDomain;
 
     /**
@@ -93,14 +90,6 @@ public class ChannelType implements Serializable {
     }
 
 
-    public ObjectId getChannelConfigSchema() {
-        return channelConfigSchema;
-    }
-
-    public void setChannelConfigSchema(ObjectId channelConfigSchema) {
-        this.channelConfigSchema = channelConfigSchema;
-    }
-
     public String getMediaRoutingDomain() {
         return mediaRoutingDomain;
     }
@@ -120,7 +109,6 @@ public class ChannelType implements Serializable {
                 ", typeName='" + typeName + '\'' +
                 ", channelLogo=" + channelLogo +
                 ", isInteractive=" + isInteractive +
-                ", channelConfigSchema=" + channelConfigSchema +
                 ", mediaRoutingDomain=" + mediaRoutingDomain +
                 '}';
     }

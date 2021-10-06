@@ -44,3 +44,17 @@ Version 1.5.2
  -- Updated FormData 'id' type to ObjectId
  
  -- Updated FormData Constructor 
+
+ 
+
+====================================================================
+
+Version 1.5.3
+
+
+ -- removed 'channelConfigSchema' from ChannelType
+  
+ -- added @Indexed for 'typeName' in ChannelType
+
+ -- added 'channelType' as Referenced Object in Channel
+
