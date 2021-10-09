@@ -7,7 +7,7 @@ public class Attribute implements Serializable {
 
     private String key;
     private ValueType type;
-    private String value;
+    private Object value;
 
     public Attribute() {}
 
@@ -27,7 +27,7 @@ public class Attribute implements Serializable {
         this.type = type;
     }
 
-    public String getValue() {
+    public Object getValue() {
         return value;
     }
 
