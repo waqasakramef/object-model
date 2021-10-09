@@ -69,3 +69,17 @@ Version 1.5.4
  -- added 'WidgetTheme' Enum
  
  -- added 'Language' Class
+ 
+  ==================================================================
+  
+ Version 1.5.5
+ 
+  -- Data type of `value` changed from `String` to `Object` in `Attribute`  
+ 
+  -- Data type of `intent` changed from `NLUIntent` to `String` in `MessageHeader`
+  
+  -- `MessageType` enum item `NOTIFICATIONS` changed to `NOTIFICATION`
+  
+  -- `MessageIntent` enum added
+    
+  
