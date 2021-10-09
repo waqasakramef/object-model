@@ -44,3 +44,28 @@ Version 1.5.2
  -- Updated FormData 'id' type to ObjectId
  
  -- Updated FormData Constructor 
+
+ 
+
+====================================================================
+
+Version 1.5.3
+
+
+ -- removed 'channelConfigSchema' from ChannelType
+  
+ -- added @Indexed for 'typeName' in ChannelType
+
+ -- added 'channelType' as Referenced Object in Channel
+
+
+ ==================================================================
+ 
+Version 1.5.4
+
+
+ -- added 'CustomerWidgetConfig' Class
+
+ -- added 'WidgetTheme' Enum
+ 
+ -- added 'Language' Class

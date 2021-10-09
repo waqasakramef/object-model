@@ -4,6 +4,7 @@ import com.ef.cim.objectmodel.annotations.cascadesave.CascadeSave;
 import java.io.Serializable;
 import java.util.UUID;
 import javax.validation.Valid;
+import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotEmpty;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.DBRef;
@@ -17,7 +18,7 @@ public class Channel implements Serializable {
 
     private UUID id;
     //  private ChannelType type;
-    @NotEmpty
+    @NotBlank
     private String channelName;
     // Class ServiceIdentifier Empty | not in object model yet
     @Id
@@ -28,6 +29,8 @@ public class Channel implements Serializable {
     @DBRef
     private ChannelConnector channelConnector;
     private FormData additionalConfig;
+    @DBRef
+    private ChannelType channelType;
 
     /**
      * Default Constructor, Sets an immutable Unique Identifying Number for the channel Initializes all the instance
@@ -39,6 +42,7 @@ public class Channel implements Serializable {
         this.tenant = new Tenant();
         this.channelConfig = new ChannelConfig();
         this.channelConnector = new ChannelConnector();
+        this.channelType = new ChannelType();
 //        this.additionalConfig = new FormData();
     }
 
@@ -201,6 +205,14 @@ public class Channel implements Serializable {
      */
     public void setAdditionalConfig(FormData additionalConfig) {
         this.additionalConfig = additionalConfig;
+    }
+
+    public ChannelType getChannelType() {
+        return channelType;
+    }
+
+    public void setChannelType(ChannelType channelType) {
+        this.channelType = channelType;
     }
 
     /***
