@@ -21,7 +21,7 @@ public class ChannelData implements Serializable {
 
     // This field should be List<KeyValuePair>. Changed it for initial integration
     // with Agent Manager
-    private List<KeyValuePair> additionalAttributes;
+    private List<Attribute> additionalAttributes;
 
     public ChannelData() {
         this.additionalAttributes = new ArrayList<>();
@@ -43,12 +43,16 @@ public class ChannelData implements Serializable {
         this.serviceIdentifier = serviceIdentifier;
     }
 
-    public List<KeyValuePair> getAdditionalAttributes() { return additionalAttributes; }
+    public List<Attribute> getAdditionalAttributes() {
+        return additionalAttributes;
+    }
 
-    public void setAdditionalAttributes(List<KeyValuePair> additionalAttributes) { this.additionalAttributes = additionalAttributes; }
+    public void setAdditionalAttributes(List<Attribute> additionalAttributes) {
+        this.additionalAttributes = additionalAttributes;
+    }
 
-    public void addAdditionalAttribute(String key, String value) {
-        this.additionalAttributes.add(new KeyValuePair(key,value));
+    public void addAdditionalAttribute(Attribute attribute) {
+        this.additionalAttributes.add(attribute);
     }
     public void removeAdditionalAttribute(KeyValuePair keyValuePair) {
         this.additionalAttributes.remove(keyValuePair);
