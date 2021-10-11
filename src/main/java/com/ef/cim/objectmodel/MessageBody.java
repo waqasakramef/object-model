@@ -15,6 +15,7 @@ import javax.validation.constraints.NotNull;
 @JsonSubTypes({
         @Type(value = DeliveryNotification.class, name = "DELIVERYNOTIFICATION"),
         @Type(value = StructuredMessage.class, name = "StructuredMessage"),
+        @Type(value = NotificationMessage.class, name = "NOTIFICATION"),
         @Type(value = MultimediaMessage.class, name = "MULTIMEDIA"),
         @Type(value = VideoMessage.class, name = "VIDEO"),
         @Type(value = ImageMessage.class, name = "IMAGE"),
