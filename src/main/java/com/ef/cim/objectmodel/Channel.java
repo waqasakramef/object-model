@@ -1,11 +1,12 @@
 package com.ef.cim.objectmodel;
 
-import com.ef.cim.objectmodel.annotations.cascadesave.CascadeSave;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import com.fasterxml.jackson.databind.ser.std.ToStringSerializer;
 import java.io.Serializable;
 import java.util.UUID;
 import javax.validation.Valid;
 import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotEmpty;
+import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
@@ -16,11 +17,12 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Document(collection = "Channel")
 public class Channel implements Serializable {
 
-    private UUID id;
-    //  private ChannelType type;
+    @JsonSerialize(using = ToStringSerializer.class)
+    private ObjectId id;
     @NotBlank
-    private String channelName;
+    private String name;
     // Class ServiceIdentifier Empty | not in object model yet
+    @NotBlank(message = "serviceIdentifier can not be blank")
     @Id
     private String serviceIdentifier;
     private Tenant tenant;
@@ -28,7 +30,6 @@ public class Channel implements Serializable {
     private ChannelConfig channelConfig;
     @DBRef
     private ChannelConnector channelConnector;
-    private FormData additionalConfig;
     @DBRef
     private ChannelType channelType;
 
@@ -37,24 +38,22 @@ public class Channel implements Serializable {
      * member objects except the Strings
      */
     public Channel() {
-        this.id = UUID.randomUUID();
-        //  this.type = new ChannelType();
+        this.id = new ObjectId();
         this.tenant = new Tenant();
         this.channelConfig = new ChannelConfig();
         this.channelConnector = new ChannelConnector();
         this.channelType = new ChannelType();
-//        this.additionalConfig = new FormData();
     }
 
-    public Channel(String channelName, String serviceIdentifier, ChannelConfig channelConfig,
-            ChannelConnector channelConnector, Tenant tenant, FormData additionalConfig) {
-        this.id = UUID.randomUUID();
-        this.channelName = channelName;
+    public Channel(String name, String serviceIdentifier, ChannelConfig channelConfig,
+            ChannelConnector channelConnector, Tenant tenant, ChannelType channelType) {
+        this.id = new ObjectId();
+        this.name = name;
         this.serviceIdentifier = serviceIdentifier;
         this.channelConfig = channelConfig;
         this.channelConnector = channelConnector;
         this.tenant = tenant;
-        this.additionalConfig = additionalConfig;
+        this.channelType = channelType;
     }
 
     /**
@@ -62,7 +61,7 @@ public class Channel implements Serializable {
      *
      * @return {@code UUID}
      */
-    public UUID getId() {
+    public ObjectId getId() {
         return this.id;
     }
 
@@ -71,7 +70,7 @@ public class Channel implements Serializable {
      *
      * @param id UUID object
      */
-    public void setId(UUID id) {
+    public void setId(ObjectId id) {
         this.id = id;
     }
 
@@ -89,17 +88,17 @@ public class Channel implements Serializable {
      *
      * @return {@code String}
      */
-    public String getChannelName() {
-        return this.channelName;
+    public String getName() {
+        return this.name;
     }
 
     /**
      * Sets the name of the channel
      *
-     * @param channelName, object of type {@code String}
+     * @param name, object of type {@code String}
      */
-    public void setChannelName(String channelName) {
-        this.channelName = channelName;
+    public void setName(String name) {
+        this.name = name;
     }
 
     /**
@@ -173,38 +172,12 @@ public class Channel implements Serializable {
         this.channelConnector = channelConnector;
     }
 
-
-//    public UUID getChannelConnectorId() {
-//        return channelConnectorId;
-//    }
-//
-//    public void setChannelConnectorId(UUID channelConnectorId) {
-//        this.channelConnectorId = channelConnectorId;
-//    }
-
-
     public Tenant getTenant() {
         return tenant;
     }
 
     public void setTenant(Tenant tenant) {
         this.tenant = tenant;
-    }
-
-    /**
-     * Gets additionalConfig
-     * @return FormData
-     */
-    public FormData getAdditionalConfig() {
-        return additionalConfig;
-    }
-
-    /**
-     * Sets additionalConfig
-     * @param additionalConfig value of additionalConfig
-     */
-    public void setAdditionalConfig(FormData additionalConfig) {
-        this.additionalConfig = additionalConfig;
     }
 
     public ChannelType getChannelType() {
@@ -223,12 +196,11 @@ public class Channel implements Serializable {
     public String toString() {
         return "Channel{" +
                 "id=" + id +
-                ", channelName='" + channelName + '\'' +
+                ", name='" + name + '\'' +
                 ", serviceIdentifier='" + serviceIdentifier + '\'' +
                 ", tenant=" + tenant +
                 ", channelConfig=" + channelConfig +
                 ", channelConnector=" + channelConnector +
-                ", additionalConfig=" + additionalConfig +
                 '}';
     }
 }

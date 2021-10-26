@@ -82,4 +82,36 @@ Version 1.5.4
   
   -- `MessageIntent` enum added
     
+
+
+  ======================================================================
   
+ Version 1.5.8
+
+ -- Added 'ChannelProviderInterface' Class
+
+ -- Renamed 'typeName' to 'name' in ChannelType
+
+ -- Updated Data type of 'id' form UUID to ObjectId in ChannelType
+ 
+ -- Removed 'channelConnectorInterface' and 'interfaceAddress' attributes from channel connector 
+
+ -- Removed 'channelType' from ChannelConnector
+
+ -- Removed 'connectorConfigs' from ChannelConnector
+ 
+ -- Added 'ChannelProviderInterface' with Referenced relation in ChannelConnector
+ 
+ -- Added 'channelProviderConfigs' in ChannelConnector
+ 
+ -- Renamed 'channelConnectorName' to 'name' in ChannelConnector
+ 
+ -- Updated Data type of 'id' form UUID to ObjectId in ChannelConnector
+ 
+ -- Removed 'additionalConfig' from Channel
+ 
+ -- Renamed 'channelName' to 'name' in Channel
+ 
+ -- Updated Data type of 'id' form UUID to ObjectId in Channel
+ 
+ -- Updated 'AlphanumSpecial200' in ValueType Enum
