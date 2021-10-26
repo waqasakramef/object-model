@@ -14,5 +14,6 @@ public enum ValueType {
     Boolean,
     Email,
     Password,
-    StringList
+    StringList,
+    WebChannelData
 }
