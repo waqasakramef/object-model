@@ -115,3 +115,11 @@ Version 1.5.4
  -- Updated Data type of 'id' form UUID to ObjectId in Channel
  
  -- Updated 'AlphanumSpecial200' in ValueType Enum
+ 
+   ======================================================================
+   
+ Version 1.5.9
+
+ -- `additionalAttributesa` variable type changed from `List<KeyValuePair>` to `List<Attribute>` in `ChannelData` Class
+ 
+ 
