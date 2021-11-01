@@ -122,4 +122,10 @@ Version 1.5.4
 
  -- `additionalAttributesa` variable type changed from `List<KeyValuePair>` to `List<Attribute>` in `ChannelData` Class
  
- 
+
+  ===============================================================================
+  
+  Version 1.6.0
+  
+
+ -- Added 'channelTypeCode' attribute in ChannelData Class 

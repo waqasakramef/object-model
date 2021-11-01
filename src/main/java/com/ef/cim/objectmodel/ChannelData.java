@@ -13,11 +13,13 @@ import javax.validation.constraints.NotBlank;
 
 
 public class ChannelData implements Serializable {
-    @NotBlank
+    @NotBlank(message = "channelCustomerIdentifier is mandatory")
     private String channelCustomerIdentifier;
-    @NotBlank
+    @NotBlank(message = "serviceIdentifier is mandatory")
     private String serviceIdentifier;
     private int requestPriority;
+    @NotBlank(message = "channelTypeCode is mandatory")
+    private String channelTypeCode;
 
     // This field should be List<KeyValuePair>. Changed it for initial integration
     // with Agent Manager
@@ -69,6 +71,14 @@ public class ChannelData implements Serializable {
         this.requestPriority = requestPriority;
     }
 
+    public String getChannelTypeCode() {
+        return channelTypeCode;
+    }
+
+    public void setChannelTypeCode(String channelTypeCode) {
+        this.channelTypeCode = channelTypeCode;
+    }
+
     /**
      * String Representation of ChannelData
      *
@@ -80,6 +90,7 @@ public class ChannelData implements Serializable {
                 "channelCustomerIdentifier='" + channelCustomerIdentifier + '\'' +
                 ", serviceIdentifier='" + serviceIdentifier + '\'' +
                 ", requestPriority=" + requestPriority +
+                ", channelTypeCode='" + channelTypeCode + '\'' +
                 ", additionalAttributes=" + additionalAttributes +
                 '}';
     }
