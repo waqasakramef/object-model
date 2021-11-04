@@ -18,12 +18,12 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class Channel implements Serializable {
 
     @JsonSerialize(using = ToStringSerializer.class)
+    @Id
     private ObjectId id;
     @NotBlank
     private String name;
     // Class ServiceIdentifier Empty | not in object model yet
     @NotBlank(message = "serviceIdentifier can not be blank")
-    @Id
     private String serviceIdentifier;
     private Tenant tenant;
     @Valid
@@ -201,6 +201,7 @@ public class Channel implements Serializable {
                 ", tenant=" + tenant +
                 ", channelConfig=" + channelConfig +
                 ", channelConnector=" + channelConnector +
+                ", channelType=" + channelType +
                 '}';
     }
 }

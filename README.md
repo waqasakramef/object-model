@@ -129,3 +129,12 @@ Version 1.5.4
   
 
  -- Added 'channelTypeCode' attribute in ChannelData Class 
+ 
+
+
+  =======================================================================================
+  
+ Version 1.6.1
+ 
+
+ -- Added @Id annotation on 'id' attribute in Channel Class  
