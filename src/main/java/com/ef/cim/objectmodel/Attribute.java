@@ -31,7 +31,7 @@ public class Attribute implements Serializable {
         return value;
     }
 
-    public void setValue(String value) {
+    public void setValue(Object value) {
         this.value = value;
     }
 

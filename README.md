@@ -138,3 +138,12 @@ Version 1.5.4
  
 
  -- Added @Id annotation on 'id' attribute in Channel Class  
+ 
+
+
+  ==========================================================================================
+  
+ Version 1.6.2
+ 
+
+ -- Updated Setter of 'value' in Attribute Class
