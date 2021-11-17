@@ -1,6 +1,7 @@
 package com.ef.cim.objectmodel;
 
 import java.io.Serializable;
+import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
@@ -11,6 +12,9 @@ public class CustomerTopic implements Serializable {
     private List<TopicParticipant> participants;
     private TopicState state;
     private ChannelSession channelSession;
+    private Timestamp creationTime;
+
+
 
     // Default Constructor
     public CustomerTopic() {
@@ -68,6 +72,15 @@ public class CustomerTopic implements Serializable {
 
     public void setChannelSession(ChannelSession channelSession) {
         this.channelSession = channelSession;
+    }
+
+
+    public Timestamp getCreationTime() {
+        return creationTime;
+    }
+
+    public void setCreationTime(Timestamp creationTime) {
+        this.creationTime = creationTime;
     }
 
     @Override
