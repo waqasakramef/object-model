@@ -1,26 +1,28 @@
 package com.ef.cim.objectmodel;
 
 import java.util.List;
+import javax.validation.Valid;
 
 public class Section {
 
-    private String text;
+    private String title;
+    @Valid
     private List<Row> rows;
 
     public Section() {
     }
 
-    public Section(String text, List<Row> rows) {
-        this.text = text;
+    public Section(String title, List<Row> rows) {
+        this.title = title;
         this.rows = rows;
     }
 
-    public String getText() {
-        return text;
+    public String getTitle() {
+        return title;
     }
 
-    public void setText(String text) {
-        this.text = text;
+    public void setTitle(String title) {
+        this.title = title;
     }
 
     public List<Row> getRows() {
@@ -34,7 +36,7 @@ public class Section {
     @Override
     public String toString() {
         return "Section{" +
-                "text='" + text + '\'' +
+                "text='" + title + '\'' +
                 ", rows=" + rows +
                 '}';
     }

@@ -2,9 +2,11 @@ package com.ef.cim.objectmodel;
 
 import java.util.ArrayList;
 import java.util.List;
+import javax.validation.Valid;
 
 public class ButtonMessage extends StructuredMessage {
 
+    @Valid
     private List<Button> buttons;
     private ButtonMessageType buttonMessageType;
 

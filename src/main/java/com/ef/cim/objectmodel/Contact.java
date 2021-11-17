@@ -3,9 +3,11 @@ package com.ef.cim.objectmodel;
 import com.fasterxml.jackson.databind.JsonNode;
 import java.util.ArrayList;
 import java.util.List;
+import javax.validation.Valid;
 
 public class Contact {
 
+    @Valid
     private Name name;
     private List<Phone> phones;
     private JsonNode additionalContactDetails;

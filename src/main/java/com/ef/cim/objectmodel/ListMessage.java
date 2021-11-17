@@ -1,7 +1,10 @@
 package com.ef.cim.objectmodel;
 
+import javax.validation.Valid;
+
 public class ListMessage extends StructuredMessage {
 
+    @Valid
     private Interactive interactive;
 
     public ListMessage( Interactive interactive) {

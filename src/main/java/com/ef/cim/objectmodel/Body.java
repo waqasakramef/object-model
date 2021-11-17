@@ -1,8 +1,14 @@
 package com.ef.cim.objectmodel;
 
+import javax.validation.constraints.NotBlank;
+
 public class Body {
 
+    @NotBlank(message = "text is mandatory")
     private String text;
+
+    public Body() {
+    }
 
     public Body(String text) {
         this.text = text;

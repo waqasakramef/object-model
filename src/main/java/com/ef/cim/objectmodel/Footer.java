@@ -8,6 +8,9 @@ public class Footer {
         this.text = text;
     }
 
+    public Footer() {
+    }
+
     public String getText() {
         return text;
     }

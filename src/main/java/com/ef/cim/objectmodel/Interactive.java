@@ -1,11 +1,17 @@
 package com.ef.cim.objectmodel;
 
+import javax.validation.Valid;
+import javax.validation.constraints.NotBlank;
+
 public class Interactive {
 
+    @NotBlank(message = "type is mandatory")
     private String type;
     private Header header;
+    @Valid
     private Body body;
     private Footer footer;
+    @Valid
     private Action action;
 
     public Interactive() {

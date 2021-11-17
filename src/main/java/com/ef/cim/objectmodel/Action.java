@@ -1,10 +1,14 @@
 package com.ef.cim.objectmodel;
 
 import java.util.List;
+import javax.validation.Valid;
+import javax.validation.constraints.NotBlank;
 
 public class Action {
 
+    @NotBlank(message = "button is mandatory")
     private String button;
+    @Valid
     private List<Section> sections;
 
     public Action() {

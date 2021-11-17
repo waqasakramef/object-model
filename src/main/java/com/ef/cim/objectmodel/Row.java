@@ -1,8 +1,12 @@
 package com.ef.cim.objectmodel;
 
+import javax.validation.constraints.NotBlank;
+
 public class Row {
 
+    @NotBlank(message = "id is mandatory")
     private String id;
+    @NotBlank(message = "title is mandatory")
     private String title;
     private String description;
 

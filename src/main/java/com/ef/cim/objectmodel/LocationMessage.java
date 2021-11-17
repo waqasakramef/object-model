@@ -1,7 +1,10 @@
 package com.ef.cim.objectmodel;
 
+import javax.validation.Valid;
+
 public class LocationMessage extends StructuredMessage {
 
+    @Valid
     private Location location;
 
     // Default Constructor
