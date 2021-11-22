@@ -6,6 +6,7 @@ public class Attachment {
     @NotBlank
     private String mediaUrl;
     private String thumbnail;
+    private String mimeType;
     private long size;
 
     public Attachment() {
@@ -37,11 +38,20 @@ public class Attachment {
         this.size = size;
     }
 
+    public String getMimeType() {
+        return mimeType;
+    }
+
+    public void setMimeType(String mimeType) {
+        this.mimeType = mimeType;
+    }
+
     @Override
     public String toString() {
         return "Attachment{" +
-                "name='" + mediaUrl + '\'' +
-                ", type='" + thumbnail + '\'' +
+                "mediaUrl='" + mediaUrl + '\'' +
+                ", thumbnail='" + thumbnail + '\'' +
+                ", mimeType='" + mimeType + '\'' +
                 ", size=" + size +
                 '}';
     }

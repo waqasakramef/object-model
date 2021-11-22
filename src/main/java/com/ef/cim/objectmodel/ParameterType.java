@@ -1,10 +1,11 @@
 package com.ef.cim.objectmodel;
 
 public enum ParameterType {
-    TEXT,
-    CURRENCY,
-    DATE_TIME,
-    IMAGE,
-    DOCUMENT,
-    VIDEO
+    text,
+    currency,
+    date_time,
+    image,
+    document,
+    video,
+    payload
 }

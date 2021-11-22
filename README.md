@@ -22,3 +22,12 @@ Below is the list of new added objects.
 - ButtonMessage
 - CarouselMessage
 - CustomMessage
+
+
+  ========================================================================
+  Version 1.6.5
+  
+ --Added "mimeType" attribute in Attachment Class
+
+ --Added Validations in Action,Body,Button,ButtonMessage,Contact,Interactive,ListMessage,
+ Location,LocationMessage,Name,Row and Section CLass

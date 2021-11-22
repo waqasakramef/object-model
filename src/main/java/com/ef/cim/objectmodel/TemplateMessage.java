@@ -2,11 +2,16 @@ package com.ef.cim.objectmodel;
 
 import java.util.ArrayList;
 import java.util.List;
+import javax.validation.Valid;
+import javax.validation.constraints.NotBlank;
 
 public class TemplateMessage extends StructuredMessage {
 
+    @NotBlank(message = "namespace of the template is mandatory")
     private String namespace;
+    @NotBlank(message = "name of the template is mandatory")
     private String name;
+    @Valid
     private Language language;
     private List<Component> components;
 
