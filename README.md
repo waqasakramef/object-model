@@ -186,3 +186,9 @@ Version 1.5.4
  Version 1.6.6
   
  -- 'intent' attribute type updated to NLUIntent in MessageHeader Class
+ 
+
+  ===========================================================================================
+ Version 1.6.7
+
+ -- 'intent' attribute type Changed to String in MessageHeader Class
