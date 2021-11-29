@@ -3,7 +3,6 @@ package com.ef.cim.objectmodel;
 import java.io.Serializable;
 import java.sql.Timestamp;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import javax.validation.Valid;
@@ -16,7 +15,7 @@ public class MessageHeader implements Serializable {
     private Timestamp timestamp;
     private MessageSecurity securityInfo; // Class MessageSecurity Empty | not in object model
     private List<String> stamps;
-    private String intent;
+    private NLUIntent intent;
     private Map<String, Object> entities;
     private ChannelSession channelSession;
 
@@ -75,11 +74,11 @@ public class MessageHeader implements Serializable {
         this.stamps = stamps;
     }
 
-    public String getIntent() {
+    public NLUIntent getIntent() {
         return this.intent;
     }
 
-    public void setIntent(String intent) {
+    public void setIntent(NLUIntent intent) {
         this.intent = intent;
     }
 

@@ -180,3 +180,9 @@ Version 1.5.4
 
  --Added Validations in Action,Body,Button,ButtonMessage,Contact,Interactive,ListMessage,
  Location,LocationMessage,Name,Row and Section CLass
+ 
+
+  ===========================================================================================
+ Version 1.6.6
+  
+ -- 'intent' attribute type updated to NLUIntent in MessageHeader Class
