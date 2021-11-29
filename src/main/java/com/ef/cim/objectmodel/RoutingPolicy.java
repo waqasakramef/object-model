@@ -1,14 +1,13 @@
 package com.ef.cim.objectmodel;
 
 import java.io.Serializable;
-import java.util.UUID;
 
 public class
 RoutingPolicy implements Serializable {
     private AgentSelectionPolicy agentSelectionPolicy;
     private boolean routeToLastAgent;
     private RoutingMode routingMode;
-    private Object routingObjectId;
+    private String routingObjectId;
     private int agentRequestTtl;
 
     public AgentSelectionPolicy getAgentSelectionPolicy() {
@@ -43,11 +42,11 @@ RoutingPolicy implements Serializable {
         this.routingMode = routingMode;
     }
 
-    public Object getRoutingObjectId() {
+    public String getRoutingObjectId() {
         return routingObjectId;
     }
 
-    public void setRoutingObjectId(Object routingObjectId) {
+    public void setRoutingObjectId(String routingObjectId) {
         this.routingObjectId = routingObjectId;
     }
 

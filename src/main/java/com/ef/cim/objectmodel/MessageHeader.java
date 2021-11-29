@@ -16,7 +16,7 @@ public class MessageHeader implements Serializable {
     private Timestamp timestamp;
     private MessageSecurity securityInfo; // Class MessageSecurity Empty | not in object model
     private List<String> stamps;
-    private NLUIntent intent;
+    private String intent;
     private Map<String, Object> entities;
     private ChannelSession channelSession;
 
@@ -75,11 +75,11 @@ public class MessageHeader implements Serializable {
         this.stamps = stamps;
     }
 
-    public NLUIntent getIntent() {
+    public String getIntent() {
         return this.intent;
     }
 
-    public void setIntent(NLUIntent intent) {
+    public void setIntent(String intent) {
         this.intent = intent;
     }
 

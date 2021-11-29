@@ -1,53 +1,47 @@
 package com.ef.cim.objectmodel;
 
-import com.ef.cim.objectmodel.annotations.cascadesave.CascadeSave;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import com.fasterxml.jackson.databind.ser.std.ToStringSerializer;
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.UUID;
 import javax.validation.constraints.NotBlank;
+import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Document(collection = "ChannelConnector")
 public class ChannelConnector implements Serializable {
+    @JsonSerialize(using = ToStringSerializer.class)
     @Id
-    private UUID id;
+    private ObjectId id;
     @NotBlank
-    private String channelConnectorName;
-    private ChannelConnectorInterface channelConnectorInterface;
-    private String interfaceAddress;
+    private String name;
     @DBRef
-    private ChannelType channelType;
-//    private UndefinedObject channelLogo;
-    private FormData channelConnectorData;
+    private ChannelProviderInterface channelProviderInterface;
+    private List<Attribute> channelProviderConfigs;
     private Tenant tenant;
 
     public ChannelConnector() {
-        this.id = UUID.randomUUID();
-        channelConnectorInterface = ChannelConnectorInterface.REST;
+        this.id = new ObjectId();
+        this.channelProviderConfigs = new ArrayList<>();
     }
 
-    public UUID getId() {
+    public ObjectId getId() {
         return id;
     }
 
-    public String getChannelConnectorName() {
-        return channelConnectorName;
+    public String getName() {
+        return name;
     }
 
-    public void setChannelConnectorName(String channelConnectorName) {
-        this.channelConnectorName = channelConnectorName;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public ChannelType getChannelType() {
-        return channelType;
-    }
-
-    public void setChannelType(ChannelType channelType) {
-        this.channelType = channelType;
-    }
-
-//    public UndefinedObject getChannelLogo() {
+    //    public UndefinedObject getChannelLogo() {
 //        return channelLogo;
 //    }
 
@@ -55,14 +49,6 @@ public class ChannelConnector implements Serializable {
 //        this.channelLogo = channelLogo;
 //    }
 
-
-    public FormData getChannelConnectorData() {
-        return channelConnectorData;
-    }
-
-    public void setChannelConnectorData(FormData channelConnectorData) {
-        this.channelConnectorData = channelConnectorData;
-    }
 
     public Tenant getTenant() {
         return tenant;
@@ -72,22 +58,22 @@ public class ChannelConnector implements Serializable {
         this.tenant = tenant;
     }
 
-    public void setId(UUID id) { this.id = id; }
+    public void setId(ObjectId id) { this.id = id; }
 
-    public ChannelConnectorInterface getChannelConnectorInterface() {
-        return channelConnectorInterface;
+    public ChannelProviderInterface getChannelProviderInterface() {
+        return channelProviderInterface;
     }
 
-    public void setChannelConnectorInterface(ChannelConnectorInterface channelConnectorInterface) {
-        this.channelConnectorInterface = channelConnectorInterface;
+    public void setChannelProviderInterface(ChannelProviderInterface channelProviderInterface) {
+        this.channelProviderInterface = channelProviderInterface;
     }
 
-    public String getInterfaceAddress() {
-        return interfaceAddress;
+    public List<Attribute> getChannelProviderConfigs() {
+        return channelProviderConfigs;
     }
 
-    public void setInterfaceAddress(String interfaceAddress) {
-        this.interfaceAddress = interfaceAddress;
+    public void setChannelProviderConfigs(List<Attribute> channelProviderConfigs) {
+        this.channelProviderConfigs = channelProviderConfigs;
     }
 
     /***
@@ -98,11 +84,9 @@ public class ChannelConnector implements Serializable {
     public String toString() {
         return "ChannelConnector{" +
                 "id=" + id +
-                ", channelConnectorName='" + channelConnectorName + '\'' +
-                ", channelConnectorInterface=" + channelConnectorInterface +
-                ", interfaceAddress='" + interfaceAddress + '\'' +
-                ", channelType=" + channelType +
-                ", channelConnectorData=" + channelConnectorData +
+                ", name='" + name + '\'' +
+                ", channelProviderInterface=" + channelProviderInterface +
+                ", channelProviderConfigs=" + channelProviderConfigs +
                 ", tenant=" + tenant +
                 '}';
     }

@@ -1,6 +1,7 @@
 package com.ef.cim.objectmodel;
 
 import java.io.Serializable;
+import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
@@ -10,6 +11,10 @@ public class CustomerTopic implements Serializable {
     private Customer customer;
     private List<TopicParticipant> participants;
     private TopicState state;
+    private ChannelSession channelSession;
+    private Timestamp creationTime;
+
+
 
     // Default Constructor
     public CustomerTopic() {
@@ -50,29 +55,42 @@ public class CustomerTopic implements Serializable {
         this.participants.add(participant);
     }
 
-
     public void removeParticipant(TopicParticipant participant) {
         if (this.participants != null) {
             this.participants.remove(participant);
         }
     }
-
     public void removeParticipant(int index) {
         if (this.participants != null) {
             this.participants.remove(index);
         }
     }
 
-    /***
-     * String Representation of CustomerTopic
-     * @return String
-     */
+    public ChannelSession getChannelSession() {
+        return channelSession;
+    }
+
+    public void setChannelSession(ChannelSession channelSession) {
+        this.channelSession = channelSession;
+    }
+
+
+    public Timestamp getCreationTime() {
+        return creationTime;
+    }
+
+    public void setCreationTime(Timestamp creationTime) {
+        this.creationTime = creationTime;
+    }
+
     @Override
     public String toString() {
         return "CustomerTopic{" +
                 "id=" + id +
+                ", customer=" + customer +
                 ", participants=" + participants +
                 ", state=" + state +
+                ", channelSession=" + channelSession +
                 '}';
     }
 }

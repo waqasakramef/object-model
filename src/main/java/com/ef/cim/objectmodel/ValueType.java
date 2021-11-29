@@ -2,7 +2,7 @@ package com.ef.cim.objectmodel;
 
 public enum ValueType {
     Alphanum100,
-    AlphanumSpecial100,
+    AlphanumSpecial200,
     String2000,
     String50,
     String100,
@@ -12,7 +12,8 @@ public enum ValueType {
     PhoneNumber,
     URL,
     Boolean,
-    EMAIL,
+    Email,
     Password,
-    StringList
+    StringList,
+    WebChannelData
 }
