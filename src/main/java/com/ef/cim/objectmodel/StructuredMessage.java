@@ -1,5 +1,6 @@
 package com.ef.cim.objectmodel;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.JsonNode;
 
 public class StructuredMessage extends MessageBody {
@@ -7,7 +8,7 @@ public class StructuredMessage extends MessageBody {
     protected JsonNode additionalDetails;
 
     // Constructor --> Args: markdownText - from parent class
-    public StructuredMessage(MessageType type) {
+    public StructuredMessage(@JsonProperty("type") MessageType type) {
         super(type);
     }
 

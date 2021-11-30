@@ -1,5 +1,6 @@
 package com.ef.cim.objectmodel;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.ArrayList;
 import java.util.List;
 import javax.validation.Valid;
@@ -20,8 +21,8 @@ public class TemplateMessage extends StructuredMessage {
         this.components = new ArrayList<>();
     }
 
-    public TemplateMessage(String namespace, String name, Language language,
-            List<Component> components) {
+    public TemplateMessage(@JsonProperty("namespace") String namespace,@JsonProperty("name") String name,@JsonProperty("language") Language language,
+            @JsonProperty("components") List<Component> components) {
         super(MessageType.TEMPLATE);
         this.namespace = namespace;
         this.name = name;

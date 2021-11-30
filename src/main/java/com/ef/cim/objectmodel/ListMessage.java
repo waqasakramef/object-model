@@ -1,5 +1,6 @@
 package com.ef.cim.objectmodel;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import javax.validation.Valid;
 
 public class ListMessage extends StructuredMessage {
@@ -7,7 +8,7 @@ public class ListMessage extends StructuredMessage {
     @Valid
     private Interactive interactive;
 
-    public ListMessage( Interactive interactive) {
+    public ListMessage(@JsonProperty("interactive") Interactive interactive) {
         super(MessageType.LIST);
         this.interactive = interactive;
     }

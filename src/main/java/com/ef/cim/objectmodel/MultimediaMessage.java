@@ -1,5 +1,6 @@
 package com.ef.cim.objectmodel;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import javax.validation.Valid;
 
 public class MultimediaMessage extends StructuredMessage {
@@ -9,14 +10,14 @@ public class MultimediaMessage extends StructuredMessage {
     protected Attachment attachment;
 
     // Default Constructor
-    public MultimediaMessage(String caption, Attachment attachment) {
+    public MultimediaMessage(@JsonProperty("caption") String caption,@JsonProperty("attachment") Attachment attachment) {
         super(MessageType.MULTIMEDIA);
         this.caption = caption;
         this.attachment = attachment;
     }
 
     // parameterized constructor
-    protected MultimediaMessage(MessageType type, String caption, Attachment attachment) {
+    protected MultimediaMessage(@JsonProperty("type") MessageType type,@JsonProperty("caption") String caption,@JsonProperty("attachment") Attachment attachment) {
         super(type);
         this.caption = caption;
         this.attachment = attachment;

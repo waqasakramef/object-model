@@ -1,5 +1,6 @@
 package com.ef.cim.objectmodel;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import javax.validation.constraints.NotBlank;
 
 public class UrlMessage extends StructuredMessage {
@@ -8,7 +9,7 @@ public class UrlMessage extends StructuredMessage {
     private String mediaUrl;
 
     //default constructor
-    public UrlMessage(String mediaUrl) {
+    public UrlMessage(@JsonProperty("mediaUrl") String mediaUrl) {
         super(MessageType.URL);
         this.mediaUrl = mediaUrl;
     }

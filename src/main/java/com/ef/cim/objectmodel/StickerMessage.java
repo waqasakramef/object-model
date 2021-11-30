@@ -1,5 +1,7 @@
 package com.ef.cim.objectmodel;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 public class StickerMessage extends StructuredMessage {
 
     private String mediaUrl;
@@ -10,7 +12,7 @@ public class StickerMessage extends StructuredMessage {
         super(MessageType.STICKER);
     }
 
-    public StickerMessage(String mediaUrl, String stickerId) {
+    public StickerMessage(@JsonProperty("mediaUrl") String mediaUrl,@JsonProperty("stickerId") String stickerId) {
         super(MessageType.STICKER);
         this.mediaUrl = mediaUrl;
         this.stickerId = stickerId;

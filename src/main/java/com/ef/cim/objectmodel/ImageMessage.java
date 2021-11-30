@@ -1,11 +1,12 @@
 package com.ef.cim.objectmodel;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import javax.validation.Valid;
 
 public class ImageMessage extends MultimediaMessage {
 
     // Constructor
-    public ImageMessage(String caption, @Valid Attachment attachment) {
+    public ImageMessage(@JsonProperty("caption") String caption,@JsonProperty("attachment") @Valid Attachment attachment) {
         super(MessageType.IMAGE, caption, attachment);
     }
 

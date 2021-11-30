@@ -1,5 +1,6 @@
 package com.ef.cim.objectmodel;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import javax.validation.Valid;
 
 public class LocationMessage extends StructuredMessage {
@@ -12,7 +13,7 @@ public class LocationMessage extends StructuredMessage {
         super(MessageType.LOCATION);
     }
 
-    public LocationMessage(Location location) {
+    public LocationMessage(@JsonProperty("location") Location location) {
         super(MessageType.LOCATION);
         this.location = location;
     }

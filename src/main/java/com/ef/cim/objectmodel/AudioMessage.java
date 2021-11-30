@@ -1,11 +1,12 @@
 package com.ef.cim.objectmodel;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import javax.validation.Valid;
 
 public class AudioMessage extends MultimediaMessage{
 
     //Default Constructor
-    public AudioMessage(String caption, @Valid Attachment attachment) {
+    public AudioMessage(@JsonProperty("caption") String caption,@JsonProperty("attachment") @Valid Attachment attachment) {
         super(MessageType.AUDIO, caption, attachment);
     }
 

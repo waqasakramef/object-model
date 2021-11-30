@@ -1,5 +1,6 @@
 package com.ef.cim.objectmodel;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.ArrayList;
 import java.util.List;
 import javax.validation.Valid;
@@ -13,13 +14,13 @@ public class ButtonMessage extends StructuredMessage {
     /**
      * Default Constructor Initializes an empty buttons list.
      */
-    public ButtonMessage(ButtonMessageType buttonMessageType) {
+    public ButtonMessage(@JsonProperty("buttonMessageType") ButtonMessageType buttonMessageType) {
         super(MessageType.BUTTON);
         buttons = new ArrayList<>();
         this.buttonMessageType = buttonMessageType;
     }
 
-    public ButtonMessage(List<Button> buttons, ButtonMessageType buttonMessageType) {
+    public ButtonMessage(@JsonProperty("buttons")List<Button> buttons,@JsonProperty("buttonMessageType") ButtonMessageType buttonMessageType) {
         super(MessageType.BUTTON);
         this.buttons = buttons;
         this.buttonMessageType = buttonMessageType;

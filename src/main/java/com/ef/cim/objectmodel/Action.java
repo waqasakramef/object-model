@@ -8,6 +8,7 @@ public class Action {
 
     @NotBlank(message = "button is mandatory")
     private String button;
+    private List<Button> buttons;
     @Valid
     private List<Section> sections;
 
@@ -35,10 +36,19 @@ public class Action {
         this.sections = sections;
     }
 
+    public List<Button> getButtons() {
+        return buttons;
+    }
+
+    public void setButtons(List<Button> buttons) {
+        this.buttons = buttons;
+    }
+
     @Override
     public String toString() {
         return "Action{" +
                 "button='" + button + '\'' +
+                ", buttons=" + buttons +
                 ", sections=" + sections +
                 '}';
     }

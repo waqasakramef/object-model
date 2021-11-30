@@ -1,5 +1,6 @@
 package com.ef.cim.objectmodel;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonSubTypes.Type;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
@@ -38,6 +39,7 @@ import javax.validation.constraints.NotNull;
 })
 public class MessageBody implements Serializable {
     @NotNull
+    @JsonProperty("type")
     protected MessageType type;
     protected String markdownText;
 
@@ -50,7 +52,7 @@ public class MessageBody implements Serializable {
      *
      * @param type value of MessageType
      */
-    protected MessageBody(MessageType type) {
+    public MessageBody(MessageType type) {
         this.type = type;
     }
 

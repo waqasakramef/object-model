@@ -1,5 +1,6 @@
 package com.ef.cim.objectmodel;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -14,14 +15,14 @@ public class CarouselMessage extends StructuredMessage {
     /**
      * Default Constructor, Sets the message type to CAROUSAL Initialize the list of carousal elements as an empty list
      */
-    public CarouselMessage(CarouselMessageType carouselMessageType) {
+    public CarouselMessage(@JsonProperty("carouselMessageType") CarouselMessageType carouselMessageType) {
         super(MessageType.CAROUSEL);
         this.elements = new ArrayList<>();
         this.carouselMessageType = carouselMessageType;
     }
 
-    public CarouselMessage(CarouselMessageType carouselMessageType,
-            List<CarouselElement> elements) {
+    public CarouselMessage(@JsonProperty("carouselMessageType")CarouselMessageType carouselMessageType,
+            @JsonProperty("elements")List<CarouselElement> elements) {
         super(MessageType.CAROUSEL);
         this.carouselMessageType = carouselMessageType;
         this.elements = elements;
