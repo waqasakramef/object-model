@@ -17,7 +17,6 @@ public enum MessageType {
     CUSTOM,
     STICKER,
     URL,
-    LIST,
     RECEIPT,
     TEMPLATE
 }

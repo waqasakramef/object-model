@@ -26,7 +26,6 @@ import javax.validation.constraints.NotNull;
         @Type(value = CarouselMessage.class, name = "CAROUSEL"),
         @Type(value = ButtonMessage.class, name = "BUTTON"),
         @Type(value = MessageBody.class, name = "PLAIN"),
-        @Type(value = ListMessage.class, name = "LIST"),
         @Type(value = UrlMessage.class, name = "URL"),
         @Type(value = StickerMessage.class, name = "STICKER"),
         @Type(value = ReceiptTemplateMessage.class, name = "RECEIPT"),

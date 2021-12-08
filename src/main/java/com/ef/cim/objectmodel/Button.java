@@ -8,6 +8,7 @@ public class Button implements Serializable {
 
     @NotBlank(message = "button title is mandatory")
     private String title;
+    @NotBlank(message = "button payload is mandatory")
     private String payload;
     @NotBlank(message = "button type is mandatory")
     private String type;

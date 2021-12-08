@@ -198,3 +198,13 @@ Version 1.5.4
   Version 1.6.8
   
  -- Added @JsonProperty in all constructor of the child classes of MessageBody
+ 
+
+  =====================================================================================
+  Version 1.6.9
+  
+ -- Removed 'LIST' type from MessageBody
+ 
+ -- Added Validation in Button Class
+ 
+ -- Removed LIST from MessageType Enum
