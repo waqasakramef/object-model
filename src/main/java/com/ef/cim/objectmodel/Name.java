@@ -9,17 +9,17 @@ public class Name {
     private JsonNode additionalNameDetails;
 
     //Default Constructor
-
     public Name(String formattedName) {
         this.formattedName = formattedName;
     }
 
     //Parametrized Constructor
-
-
     public Name(String formattedName, JsonNode additionalNameDetails) {
         this.formattedName = formattedName;
         this.additionalNameDetails = additionalNameDetails;
+    }
+
+    public Name() {
     }
 
     public String getFormattedName() {

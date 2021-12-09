@@ -208,3 +208,9 @@ Version 1.5.4
  -- Added Validation in Button Class
  
  -- Removed LIST from MessageType Enum
+ 
+
+ =======================================================================================
+ Version 1.7.0
+  
+ -- added default constructor in Location and Name CLass
