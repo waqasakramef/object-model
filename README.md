@@ -214,3 +214,9 @@ Version 1.5.4
  Version 1.7.0
   
  -- added default constructor in Location and Name CLass
+ 
+
+ =======================================================================================
+ Version 1.7.1
+ 
+ -- added 'replyToMessageId' and 'providerMessageId' in MessageHeader Class

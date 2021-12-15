@@ -5,6 +5,7 @@ import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.UUID;
 import javax.validation.Valid;
 
 public class MessageHeader implements Serializable {
@@ -18,6 +19,8 @@ public class MessageHeader implements Serializable {
     private String intent;
     private Map<String, Object> entities;
     private ChannelSession channelSession;
+    private UUID replyToMessageId;
+    private String providerMessageId;
 
     // Default Constructor
     public MessageHeader() {
@@ -136,6 +139,22 @@ public class MessageHeader implements Serializable {
         }
     }
 
+    public UUID getReplyToMessageId() {
+        return replyToMessageId;
+    }
+
+    public void setReplyToMessageId(UUID replyToMessageId) {
+        this.replyToMessageId = replyToMessageId;
+    }
+
+    public String getProviderMessageId() {
+        return providerMessageId;
+    }
+
+    public void setProviderMessageId(String providerMessageId) {
+        this.providerMessageId = providerMessageId;
+    }
+
     /***
      * String Representation of MessageHeader
      * @return String
@@ -152,7 +171,8 @@ public class MessageHeader implements Serializable {
                 ", intent='" + intent + '\'' +
                 ", entities=" + entities +
                 ", channelSession=" + channelSession +
+                ", replyToMessageId=" + replyToMessageId +
+                ", providerMessageId='" + providerMessageId + '\'' +
                 '}';
     }
-
 }
