@@ -3,11 +3,11 @@ package com.ef.cim.objectmodel;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import com.fasterxml.jackson.databind.ser.std.ToStringSerializer;
 import java.io.Serializable;
-import java.util.UUID;
 import javax.validation.Valid;
 import javax.validation.constraints.NotBlank;
 import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -24,6 +24,7 @@ public class Channel implements Serializable {
     private String name;
     // Class ServiceIdentifier Empty | not in object model yet
     @NotBlank(message = "serviceIdentifier can not be blank")
+    @Indexed(unique = true)
     private String serviceIdentifier;
     private Tenant tenant;
     @Valid

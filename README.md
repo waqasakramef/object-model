@@ -220,3 +220,8 @@ Version 1.5.4
  Version 1.7.1
  
  -- added 'replyToMessageId' and 'providerMessageId' in MessageHeader Class
+ 
+
+ ========================================================================================
+ Version 1.7.2
+ -- added @Indexed annotation on serviceIdentifier attribute in Channel Class
