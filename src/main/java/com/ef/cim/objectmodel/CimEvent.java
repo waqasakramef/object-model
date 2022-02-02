@@ -7,13 +7,14 @@ import java.util.UUID;
 public class CimEvent implements Serializable {
 
 
-    private final UUID id;
+    private UUID id;
     private CimEventName name;
     private CimEventType type;
     private Timestamp timestamp;
     private Object data;
 
     public CimEvent() {
+
         this.id = UUID.randomUUID();
     }
 
@@ -25,8 +26,13 @@ public class CimEvent implements Serializable {
         this.timestamp = new Timestamp(System.currentTimeMillis());
     }
 
+    public void setId(UUID id) {
+        this.id = id;
+    }
+
     // Getters
     public UUID getId() { return id; }
+
 
     public CimEventName getName() { return name; }
 
