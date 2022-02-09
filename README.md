@@ -225,3 +225,8 @@ Version 1.5.4
  ========================================================================================
  Version 1.7.2
  -- added @Indexed annotation on serviceIdentifier attribute in Channel Class
+
+ ========================================================================================
+ Version 1.7.6
+ 
+ -- added attribute NotificationType in NotificationMessage Class
