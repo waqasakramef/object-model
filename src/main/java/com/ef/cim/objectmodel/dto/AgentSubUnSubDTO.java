@@ -1,12 +1,13 @@
 package com.ef.cim.objectmodel.dto;
 
 import com.ef.cim.objectmodel.CCUser;
+import com.ef.cim.objectmodel.ChannelSession;
 import java.util.List;
 
 public class AgentSubUnSubDTO {
 
     private CCUser ccUser;
-    private List<ChannelSessionDTO> channelSessionDTOList;
+    private List<ChannelSession> channelSessionList;
 
     public CCUser getCcUser() {
         return ccUser;
@@ -16,11 +17,11 @@ public class AgentSubUnSubDTO {
         this.ccUser = ccUser;
     }
 
-    public List<ChannelSessionDTO> getChannelSessionDTOList() {
-        return channelSessionDTOList;
+    public List<ChannelSession> getChannelSessionList() {
+        return channelSessionList;
     }
 
-    public void setChannelSessionDTOList(List<ChannelSessionDTO> channelSessionDTOList) {
-        this.channelSessionDTOList = channelSessionDTOList;
+    public void setChannelSessionList(List<ChannelSession> channelSessionList) {
+        this.channelSessionList = channelSessionList;
     }
 }
