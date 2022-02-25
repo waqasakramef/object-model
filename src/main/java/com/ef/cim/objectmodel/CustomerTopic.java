@@ -115,6 +115,8 @@ public class CustomerTopic implements Serializable {
                 ", participants=" + participants +
                 ", state=" + state +
                 ", channelSession=" + channelSession +
+                ", creationTime=" + creationTime +
+                ", metadata=" + metadata +
                 '}';
     }
 }
