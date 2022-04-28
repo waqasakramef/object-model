@@ -230,3 +230,8 @@ Version 1.5.4
  Version 1.7.7
  
  -- added attribute NotificationType in NotificationMessage Class
+ 
+
+ =========================================================================================
+ Version 1.8.0
+ -- added CHANNEL_SESSION_STARTED in NotificationType enum
