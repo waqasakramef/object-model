@@ -18,5 +18,6 @@ public enum MessageType {
     STICKER,
     URL,
     RECEIPT,
-    TEMPLATE
+    TEMPLATE,
+    VOICE
 }
